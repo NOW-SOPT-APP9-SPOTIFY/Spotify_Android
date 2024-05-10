@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.base
+package com.nowsopt.spotify.util.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
