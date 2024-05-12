@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation
+package com.nowsopt.spotify.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
