@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ActivityHomeBinding
+import com.nowsopt.spotify.presentation.home.home.HomeFragment
+import com.nowsopt.spotify.presentation.home.library.LibraryFragment
+import com.nowsopt.spotify.presentation.home.premium.PremiumFragment
+import com.nowsopt.spotify.presentation.home.search.SearchFragment
 import com.nowsopt.spotify.util.base.BindingActivity
 
 class HomeActivity : BindingActivity<ActivityHomeBinding>(ActivityHomeBinding::inflate) {
