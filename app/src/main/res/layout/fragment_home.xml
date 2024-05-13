@@ -37,34 +37,40 @@
                 android:layout_height="wrap_content"
                 android:text="X"
                 android:visibility="gone"
+                app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
                 app:chipStrokeColor="@android:color/transparent"
-                app:rippleColor="@android:color/transparent" />
+                app:rippleColor="@null" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_ch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="취향"
+                app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
                 app:chipStrokeColor="@android:color/transparent"
-                app:rippleColor="@android:color/transparent" />
+                app:rippleColor="@null" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_podcast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="팟케스트"
+                app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
-                app:chipStrokeColor="@android:color/transparent" />
+                app:chipStrokeColor="@android:color/transparent"
+                app:rippleColor="@null" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="❤️"
+                app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
-                app:chipStrokeColor="@android:color/transparent" />
+                app:chipStrokeColor="@android:color/transparent"
+                app:rippleColor="@null" />
         </com.google.android.material.chip.ChipGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
