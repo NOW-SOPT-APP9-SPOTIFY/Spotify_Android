@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.main
+package com.nowsopt.spotify.presentation.home
 
 import androidx.lifecycle.ViewModel
 

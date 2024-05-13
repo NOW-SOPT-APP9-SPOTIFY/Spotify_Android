@@ -1,8 +1,7 @@
-package com.nowsopt.spotify.presentation.main
+package com.nowsopt.spotify.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.nowsopt.spotify.databinding.FragmentHomeBinding
 import com.nowsopt.spotify.databinding.FragmentSearchBinding
 import com.nowsopt.spotify.util.base.BindingFragment
 
