@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginHorizontal="16dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topbar_home"
@@ -32,22 +32,39 @@
             app:layout_constraintTop_toTopOf="@id/img_profile">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:visibility="gone"
+                app:chipCornerRadius="36dp"
+                app:chipStrokeColor="@android:color/transparent"
+                app:rippleColor="@android:color/transparent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_ch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="취향"
-                app:chipCornerRadius="36dp" />
+                app:chipCornerRadius="36dp"
+                app:chipStrokeColor="@android:color/transparent"
+                app:rippleColor="@android:color/transparent" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_podcast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="팟케스트"
-                app:chipCornerRadius="36dp" />
+                app:chipCornerRadius="36dp"
+                app:chipStrokeColor="@android:color/transparent" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/chip_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="❤️"
-                app:chipCornerRadius="36dp" />
+                app:chipCornerRadius="36dp"
+                app:chipStrokeColor="@android:color/transparent" />
         </com.google.android.material.chip.ChipGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
