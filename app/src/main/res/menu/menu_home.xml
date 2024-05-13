@@ -9,6 +9,7 @@
     <!-- Search -->
     <item
         android:id="@+id/menu_search"
+        android:enabled="true"
         android:icon="@drawable/ic_search_gray_24"
         android:title="검색하기" />
 

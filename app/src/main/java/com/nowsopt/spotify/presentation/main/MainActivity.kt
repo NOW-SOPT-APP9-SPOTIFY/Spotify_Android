@@ -1,5 +1,6 @@
 package com.nowsopt.spotify.presentation.main
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.nowsopt.spotify.R
@@ -36,6 +37,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
 
     private fun initBottomNavigation() {
         binding.bnvHome.setOnItemSelectedListener {
+
             val screenEnum = BottomNavigationType.getScreenEnum(it.itemId)
 
             when (screenEnum) {
