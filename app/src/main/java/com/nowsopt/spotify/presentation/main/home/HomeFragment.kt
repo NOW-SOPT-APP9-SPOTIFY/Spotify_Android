@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.home.home
+package com.nowsopt.spotify.presentation.main.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,8 +13,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.chip.Chip
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentHomeBinding
-import com.nowsopt.spotify.presentation.home.home.main.HomeMainFragment
-import com.nowsopt.spotify.presentation.home.home.preference.HomePreferenceFragment
+import com.nowsopt.spotify.presentation.main.home.main.HomeMainFragment
+import com.nowsopt.spotify.presentation.main.home.preference.HomePreferenceFragment
 import com.nowsopt.spotify.util.base.BindingFragment
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>() {

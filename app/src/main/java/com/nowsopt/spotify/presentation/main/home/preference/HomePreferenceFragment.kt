@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.home.home.preference
+package com.nowsopt.spotify.presentation.main.home.preference
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

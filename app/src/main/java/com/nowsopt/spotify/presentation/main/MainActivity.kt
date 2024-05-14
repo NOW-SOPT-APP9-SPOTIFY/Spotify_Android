@@ -1,16 +1,16 @@
-package com.nowsopt.spotify.presentation.home
+package com.nowsopt.spotify.presentation.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.nowsopt.spotify.R
-import com.nowsopt.spotify.databinding.ActivityHomeBinding
-import com.nowsopt.spotify.presentation.home.home.HomeFragment
-import com.nowsopt.spotify.presentation.home.library.LibraryFragment
-import com.nowsopt.spotify.presentation.home.premium.PremiumFragment
-import com.nowsopt.spotify.presentation.home.search.SearchFragment
+import com.nowsopt.spotify.databinding.ActivityMainBinding
+import com.nowsopt.spotify.presentation.main.home.HomeFragment
+import com.nowsopt.spotify.presentation.main.library.LibraryFragment
+import com.nowsopt.spotify.presentation.main.premium.PremiumFragment
+import com.nowsopt.spotify.presentation.main.search.SearchFragment
 import com.nowsopt.spotify.util.base.BindingActivity
 
-class HomeActivity : BindingActivity<ActivityHomeBinding>(ActivityHomeBinding::inflate) {
+class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     enum class BottomNavigationType(val menuId: Int) {
         HOME(R.id.menu_home),
         SEARCH(R.id.menu_search),
