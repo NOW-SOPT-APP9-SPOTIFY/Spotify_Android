@@ -21,13 +21,11 @@ class HomePreferenceMusicAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): HomePreferenceMusicViewHolder {
-        val binding = ItemHomePreferenceMusicBinding.inflate(inflater, parent, false)
-        return HomePreferenceMusicViewHolder(
-            binding = binding,
+    ): HomePreferenceMusicViewHolder =
+        HomePreferenceMusicViewHolder(
+            binding = ItemHomePreferenceMusicBinding.inflate(inflater, parent, false),
             onClick = onClick,
         )
-    }
 
     override fun onBindViewHolder(holder: HomePreferenceMusicViewHolder, position: Int) {
         holder.onBind(currentList[position])

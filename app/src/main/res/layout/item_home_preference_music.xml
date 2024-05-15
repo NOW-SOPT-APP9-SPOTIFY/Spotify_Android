@@ -15,6 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <View
+            android:id="@+id/view_gradient_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_gradient_mock" />
+
         <TextView
             android:id="@+id/tv_home_preference_music_title"
             android:layout_width="wrap_content"

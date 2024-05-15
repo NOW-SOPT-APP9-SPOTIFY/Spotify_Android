@@ -19,13 +19,13 @@
     <color name="black">#181414</color>
 
     <!--    gradation color-->
-    <color name="gradi_m1_start">#FFB906</color>
-    <color name="gradi_m1_center">#A1A09E</color>
-    <color name="gradi_m1_end">#6D6D6D</color>
+    <color name="gradi_m1_start">#55FFB906</color>
+    <color name="gradi_m1_center">#24A1A09E</color>
+    <color name="gradi_m1_end">#246D6D6D</color>
 
-    <color name="gradi_m2_start">#FFDFA1</color>
-    <color name="gradi_m2_center">#C6B79B</color>
-    <color name="gradi_m2_end">#959595</color>
+    <color name="gradi_m2_start">#4DFFDFA1</color>
+    <color name="gradi_m2_center">#1FC6B79B</color>
+    <color name="gradi_m2_end">#1F959595</color>
 
     <color name="gradi_m3_start">#A90B0B</color>
     <color name="gradi_m3_center">#5B1A1A</color>
