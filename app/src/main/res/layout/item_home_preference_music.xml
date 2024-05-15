@@ -9,10 +9,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_preference_music"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -107,10 +106,98 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="4dp"
+                android:contentDescription="@null"
                 android:padding="5dp"
                 android:src="@drawable/ic_sound_32"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_album"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="67dp"
+                android:layout_marginTop="42dp"
+                android:contentDescription="@null"
+                android:src="@drawable/img_bruno"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressBar1" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_album_mini"
+                android:layout_width="51dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="14dp"
+                android:contentDescription="@null"
+                android:src="@drawable/img_bruno"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_preference_music_album_mini"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_home_preference_music_title_mini" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_title_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="72dp"
+                app:layout_constraintStart_toEndOf="@id/iv_home_preference_music_album_mini"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album"
+                tools:text="Doo-Wops &amp; Hooligans" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_album_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title_mini"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title_mini"
+                tools:text="앨범 · Bruno Mars" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_plus_white_22"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album_mini" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_ellipsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_ellipsis_white_44"
+                app:layout_constraintStart_toEndOf="@id/iv_home_preference_plus"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album_mini" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_year_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                app:layout_constraintEnd_toStartOf="@id/iv_home_preference_play"
+                app:layout_constraintTop_toTopOf="@id/iv_home_preference_play"
+                app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_play"
+                tools:text="2010 · 10곡" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_play_44"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
