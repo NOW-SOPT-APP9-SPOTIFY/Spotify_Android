@@ -3,19 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp">
+
+    <ImageView
+        android:id="@+id/iv_home_preference_profile"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:contentDescription="@null"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/tv_home_preference_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_profile"
+        app:layout_constraintStart_toEndOf="@id/iv_home_preference_profile"
+        app:layout_constraintTop_toTopOf="@id/iv_home_preference_profile"
+        tools:text="Taylor Swift과(와) 비슷한 아티스트 더 찾기" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_preference"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_preference_profile"
         tools:listitem="@layout/item_home_preference_music" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
