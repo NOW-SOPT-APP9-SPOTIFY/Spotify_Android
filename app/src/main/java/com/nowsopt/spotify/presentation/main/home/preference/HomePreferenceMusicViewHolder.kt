@@ -13,6 +13,9 @@ class HomePreferenceMusicViewHolder(
 
     fun onBind(mockMusicModel: MockMusicModel) {
         with(binding) {
+            cvHomePreferenceMusic.setOnClickListener {
+                onClick(mockMusicModel)
+            }
             tvHomePreferenceMusicTitle.text = mockMusicModel.title
 
             // 리소스 색상 값 가져오기 -> 추후 enum과 when을 활용한 방법으로 수정 예정.
