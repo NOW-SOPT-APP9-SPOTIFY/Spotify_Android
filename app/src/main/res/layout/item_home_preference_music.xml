@@ -1,31 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingBottom="32dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="32dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_home_preference_music"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1"
         app:cardCornerRadius="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/view_gradient_background"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_home_preference_music"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_gradient_mock" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_home_preference_music_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="this is content" />
+            <TextView
+                android:id="@+id/tv_home_preference_music_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bruno Mars - Grenade" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progressBar2"
+                app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progressBar3"
+                app:layout_constraintStart_toEndOf="@id/progressBar1"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progressBar4"
+                app:layout_constraintStart_toEndOf="@id/progressBar2"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progressBar5"
+                app:layout_constraintStart_toEndOf="@id/progressBar3"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progressBar5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/iv_home_preference_music_sound"
+                app:layout_constraintStart_toEndOf="@id/progressBar4"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="4dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_sound_32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

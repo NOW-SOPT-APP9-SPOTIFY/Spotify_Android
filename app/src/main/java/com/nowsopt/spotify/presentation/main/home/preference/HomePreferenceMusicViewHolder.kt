@@ -25,7 +25,7 @@ class HomePreferenceMusicViewHolder(
                 intArrayOf(startColor, centerColor, endColor)
             )
 
-            viewGradientBackground.background = gradientDrawable
+            clHomePreferenceMusic.background = gradientDrawable
         }
     }
 }
