@@ -1,11 +1,11 @@
 package com.nowsopt.spotify.presentation.main.home.preference
 
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.databinding.FragmentHomePreferenceBinding
 import com.nowsopt.spotify.util.base.BindingFragment
 
@@ -48,7 +48,11 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
                 ),
             )
         )
-        binding.rvHomePreference.adapter = adapter
 
+        binding.ivHomePreferenceProfile.load("https://avatars.githubusercontent.com/u/52882799?v=4") {
+            transformations(CircleCropTransformation())
+        }
+
+        binding.rvHomePreference.adapter = adapter
     }
 }
