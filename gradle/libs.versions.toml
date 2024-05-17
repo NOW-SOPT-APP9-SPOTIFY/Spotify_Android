@@ -1,5 +1,6 @@
 [versions]
 agp = "8.3.0"
+coil = "2.6.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -17,6 +18,7 @@ serialization = "1.8.20"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -34,4 +36,4 @@ retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-serialization = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization"}
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
