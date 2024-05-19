@@ -1,7 +1,6 @@
 package com.nowsopt.spotify.presentation.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ActivityMainBinding
@@ -31,7 +30,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
 
             when (screenEnum) {
                 BottomNavigationType.HOME -> {
-                    findNavController(binding.fcvHome.id).navigate(R.id.home_navigation)
+                    findNavController(binding.fcvHome.id).navigate(R.id.home_nav)
                     true
                 }
 
@@ -51,11 +50,5 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
                 }
             }
         }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fcv_home, fragment)
-            .commit()
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -31,10 +30,7 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
         homePreferenceMusicAdapter =
             HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
                 // 클릭시 화면 이동 로직 구현 -> 블러 화면
-                findNavController().navigate(
-                    R.id.action_home_to_musicDetail,
-                    null
-                )
+                findNavController().navigate(R.id.action_home_navigation_to_musicDetailFragment)
             }
 
         // 추후 서버에서 값 받아온 처리 전 일단 임시로 넣어둠
