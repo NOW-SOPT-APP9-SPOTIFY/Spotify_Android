@@ -1,54 +1,36 @@
 package com.nowsopt.spotify.presentation.main
 
 import android.os.Bundle
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ActivityMainBinding
 import com.nowsopt.spotify.util.base.BindingActivity
 
 class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
-    enum class BottomNavigationType(val menuId: Int) {
-        HOME(R.id.menu_home),
-        SEARCH(R.id.menu_search),
-        LIBRARY(R.id.menu_library),
-        PREMIUM(R.id.menu_spotify);
-
-        companion object {
-            fun getScreenEnum(id: Int) = BottomNavigationType.entries.first { it.menuId == id }
-        }
-    }
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        initBottomNavigation()
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fcv_home) as NavHostFragment
+        navController = navHostFragment.navController
+
+        // 바텀 네비게이션 연결
+        binding.bnvHome.setupWithNavController(navController)
+
+        setBottomClickListener()
     }
 
-    private fun initBottomNavigation() {
-        binding.bnvHome.setOnItemSelectedListener {
-            val screenEnum = BottomNavigationType.getScreenEnum(it.itemId)
-
-            when (screenEnum) {
-                BottomNavigationType.HOME -> {
-                    findNavController(binding.fcvHome.id).navigate(R.id.home_nav)
-                    true
-                }
-
-                BottomNavigationType.SEARCH -> {
-                    findNavController(binding.fcvHome.id).navigate(R.id.search_navigation)
-                    true
-                }
-
-                BottomNavigationType.LIBRARY -> {
-                    findNavController(binding.fcvHome.id).navigate(R.id.library_navigation)
-                    true
-                }
-
-                BottomNavigationType.PREMIUM -> {
-                    findNavController(binding.fcvHome.id).navigate(R.id.premium_navigation)
-                    true
-                }
-            }
+    private fun setBottomClickListener() {
+        binding.bnvHome.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, navController)
+            return@setOnItemSelectedListener true
         }
     }
 }
