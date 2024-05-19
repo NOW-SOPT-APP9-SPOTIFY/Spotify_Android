@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="2012 · 앨범"
+        android:textColor="@color/gray30"
         app:layout_constraintTop_toBottomOf="@id/tv_popular_album"
         app:layout_constraintStart_toStartOf="@id/tv_popular_album"
         android:layout_marginTop="3dp"

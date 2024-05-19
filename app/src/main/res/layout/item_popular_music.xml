@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_music_title"
         app:layout_constraintStart_toStartOf="@id/tv_music_title"
         android:includeFontPadding="false"
+        android:textColor="@color/gray30"
         />
 
     <ImageView

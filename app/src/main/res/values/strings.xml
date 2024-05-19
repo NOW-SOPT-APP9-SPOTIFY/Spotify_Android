@@ -15,4 +15,7 @@
     <string name="music_popular">인기 음악</string>
     <string name="see_discography">디스코그래피 보기</string>
     <string name="detail_description">상세정보</string>
+    <string name="artist_playlist">아티스트 플레이리스트</string>
+    <string name="other_music_fan_like">팬들이 좋아하는 다른 음악</string>
+    <string name="included_music">수록된 작품</string>
 </resources>

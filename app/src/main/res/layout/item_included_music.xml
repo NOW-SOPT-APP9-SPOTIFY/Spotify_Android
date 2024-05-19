@@ -5,38 +5,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
-        android:id="@+id/iv_genre"
+        android:id="@+id/iv_included_music"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1"
-        android:src="@drawable/artist_genre_1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="16dp"
+        android:src="@drawable/img_included_music_1"
         />
     <TextView
-        android:id="@+id/tv_genre_title"
+        android:id="@+id/tv_included_title"
         android:theme="@style/TextAppearance.Spotify.Body.Medium_en"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="This is Bruno Mars"
-        app:layout_constraintTop_toBottomOf="@id/iv_genre"
-        app:layout_constraintStart_toStartOf="@id/iv_genre"
-        android:includeFontPadding="false"
-        android:layout_marginTop="8dp"
-        />
-    <TextView
-        android:id="@+id/tv_genre_description"
-        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
-        tools:text="This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스트"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/gray30"
+        tools:text="The Carter IV (Complete Edition)"
         android:maxLines="2"
         android:ellipsize="end"
-        app:layout_constraintTop_toBottomOf="@id/tv_genre_title"
+        app:layout_constraintTop_toBottomOf="@id/iv_included_music"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
         />
+    <TextView
+        android:id="@+id/tv_included_release"
+        android:theme="@style/TextAppearance.Spotify.Body.Medium_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2011"
+        android:textColor="@color/gray30"
+        app:layout_constraintTop_toBottomOf="@id/tv_included_title"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
