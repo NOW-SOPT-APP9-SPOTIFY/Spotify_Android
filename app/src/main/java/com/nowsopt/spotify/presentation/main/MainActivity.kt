@@ -2,12 +2,9 @@ package com.nowsopt.spotify.presentation.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ActivityMainBinding
-import com.nowsopt.spotify.presentation.main.home.HomeFragment
-import com.nowsopt.spotify.presentation.main.library.LibraryFragment
-import com.nowsopt.spotify.presentation.main.premium.PremiumFragment
-import com.nowsopt.spotify.presentation.main.search.SearchFragment
 import com.nowsopt.spotify.util.base.BindingActivity
 
 class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -25,17 +22,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        initFragmentView()
         initBottomNavigation()
-    }
-
-    private fun initFragmentView() {
-        val currentFragment = supportFragmentManager.findFragmentById(binding.fcvHome.id)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(binding.fcvHome.id, HomeFragment())
-                .commit()
-        }
     }
 
     private fun initBottomNavigation() {
@@ -44,22 +31,22 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
 
             when (screenEnum) {
                 BottomNavigationType.HOME -> {
-                    replaceFragment(HomeFragment())
+                    findNavController(binding.fcvHome.id).navigate(R.id.home_navigation)
                     true
                 }
 
                 BottomNavigationType.SEARCH -> {
-                    replaceFragment(SearchFragment())
+                    findNavController(binding.fcvHome.id).navigate(R.id.search_navigation)
                     true
                 }
 
                 BottomNavigationType.LIBRARY -> {
-                    replaceFragment(LibraryFragment())
+                    findNavController(binding.fcvHome.id).navigate(R.id.library_navigation)
                     true
                 }
 
                 BottomNavigationType.PREMIUM -> {
-                    replaceFragment(PremiumFragment())
+                    findNavController(binding.fcvHome.id).navigate(R.id.premium_navigation)
                     true
                 }
             }
