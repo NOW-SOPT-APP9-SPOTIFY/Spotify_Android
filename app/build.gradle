@@ -67,6 +67,4 @@ dependencies {
 
     // coil
     implementation libs.coil
-
-    implementation libs.androidx.fragment
 }
