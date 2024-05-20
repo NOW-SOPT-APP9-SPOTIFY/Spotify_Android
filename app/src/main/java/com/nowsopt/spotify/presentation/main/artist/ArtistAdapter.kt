@@ -11,6 +11,12 @@ import com.nowsopt.spotify.databinding.ItemIncludedMusicBinding
 import com.nowsopt.spotify.databinding.ItemOtherMusicBinding
 import com.nowsopt.spotify.databinding.ItemPopularAlbumBinding
 import com.nowsopt.spotify.databinding.ItemPopularMusicBinding
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.ALBUM
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.GENRE
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.INCLUDED
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.OTHER
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.PLAYLIST
+import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.POPULAR_MUSIC
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockArtistGenreModel
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockIncludedMusic
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
@@ -70,12 +76,5 @@ class ArtistAdapter(
         }
     }
 
-    companion object {
-        private const val ALBUM = 0
-        private const val GENRE = 1
-        private const val INCLUDED = 2
-        private const val OTHER = 3
-        private const val PLAYLIST = 4
-        private const val POPULAR_MUSIC = 5
-    }
+
 }
