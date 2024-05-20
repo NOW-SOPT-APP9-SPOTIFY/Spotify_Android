@@ -179,7 +179,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -192,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 android:text="@string/artist_popular"
+                android:layout_marginStart="16dp"
                 android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -211,6 +211,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_popular"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_popular_music" />
 
             <TextView
@@ -219,6 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:includeFontPadding="false"
+                android:layout_marginStart="16dp"
                 android:text="@string/recommend_artist"
                 android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -231,6 +235,8 @@
                 android:layout_marginTop="8dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/img_album_bruno_mars"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_recommend_artist" />
@@ -240,6 +246,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
                 android:text="@string/music_popular"
                 android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -250,9 +257,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_popular_music"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_popular_album" />
 
             <TextView
@@ -271,9 +280,11 @@
 
             <TextView
                 android:id="@+id/tv_genre_title"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_see_discography"
                 tools:text="Bruno Mars 장르" />
@@ -283,10 +294,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_genre_title"
                 android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_artist_genre" />
 
             <TextView
@@ -295,6 +309,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="@string/detail_description"
+                android:layout_marginStart="16dp"
                 android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_artist_genre" />
@@ -304,6 +319,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_artist_card"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_detail_description" />
@@ -315,6 +333,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:text="@string/artist_playlist"
                 />
 
@@ -326,6 +345,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_artist_playlist"
                 android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_artist_playlist"
                 />
 
@@ -335,6 +358,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/other_music_fan_like"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="16dp"
                 app:layout_constraintTop_toBottomOf="@id/rv_artist_playlist"
                 app:layout_constraintStart_toStartOf="parent"
                 />
@@ -347,6 +372,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_other_music"
                 android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_other_music"
                 />
 
@@ -356,6 +385,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/included_music"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
                 app:layout_constraintTop_toBottomOf="@id/rv_other_music"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -367,9 +398,19 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_included_music"
                 android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
                 tools:listitem="@layout/item_included_music"
-                android:layout_marginBottom="48dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="8dp"
                 />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_included_music"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

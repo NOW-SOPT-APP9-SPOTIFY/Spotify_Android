@@ -1,0 +1,16 @@
+package com.nowsopt.spotify.presentation.main.artist.included
+
+import androidx.recyclerview.widget.RecyclerView
+import com.nowsopt.spotify.databinding.ItemIncludedMusicBinding
+
+class IncludedMusicViewHolder(
+    private val binding: ItemIncludedMusicBinding
+) : RecyclerView.ViewHolder(binding.root) {
+
+    fun onBind(mockIncludedMusic: MockIncludedMusic) {
+        with(binding) {
+            tvIncludedTitle.text = mockIncludedMusic.title
+            tvIncludedRelease.text = mockIncludedMusic.release.toString()
+        }
+    }
+}

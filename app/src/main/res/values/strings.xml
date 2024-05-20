@@ -18,4 +18,5 @@
     <string name="artist_playlist">아티스트 플레이리스트</string>
     <string name="other_music_fan_like">팬들이 좋아하는 다른 음악</string>
     <string name="included_music">수록된 작품</string>
+    <string name="popular_album_release">%1$s · 앨범</string>
 </resources>
