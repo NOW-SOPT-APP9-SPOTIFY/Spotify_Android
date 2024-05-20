@@ -1,7 +1,9 @@
 package com.nowsopt.spotify.presentation.main.artist
 
 import android.os.Bundle
-import com.nowsopt.spotify.databinding.ActivityArtistBinding
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import com.nowsopt.spotify.databinding.FragmentArtistBinding
 import com.nowsopt.spotify.presentation.main.artist.album.MockPopularAlbumModel
 import com.nowsopt.spotify.presentation.main.artist.album.PopularAlbumAdapter
 import com.nowsopt.spotify.presentation.main.artist.genre.ArtistGenreAdapter
@@ -14,15 +16,20 @@ import com.nowsopt.spotify.presentation.main.artist.playlist.MockPlaylistModel
 import com.nowsopt.spotify.presentation.main.artist.playlist.PlaylistAdapter
 import com.nowsopt.spotify.presentation.main.artist.popular.MockPopularMusicModel
 import com.nowsopt.spotify.presentation.main.artist.popular.PopularMusicAdapter
-import com.nowsopt.spotify.util.base.BindingActivity
+import com.nowsopt.spotify.util.base.BindingFragment
 
-class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBinding::inflate) {
+class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
     private lateinit var popularMusicAdapter: PopularMusicAdapter
     private lateinit var popularAlbumAdapter: PopularAlbumAdapter
     private lateinit var artistGenreAdapter: ArtistGenreAdapter
     private lateinit var playlistAdapter: PlaylistAdapter
     private lateinit var otherMusicAdapter: OtherMusicAdapter
     private lateinit var includedMusicAdapter: IncludedMusicAdapter
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentArtistBinding = FragmentArtistBinding.inflate(inflater, container, false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +47,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initPopularMusicBinds() {
-        popularMusicAdapter = PopularMusicAdapter(this)
+        popularMusicAdapter = PopularMusicAdapter(requireContext())
 
         popularMusicAdapter.submitList(
             listOf(
@@ -77,7 +84,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initPopularAlbumBinds() {
-        popularAlbumAdapter = PopularAlbumAdapter(this)
+        popularAlbumAdapter = PopularAlbumAdapter(requireContext())
 
         popularAlbumAdapter.submitList(
             listOf(
@@ -110,7 +117,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initArtistGenreBinds() {
-        artistGenreAdapter = ArtistGenreAdapter(this)
+        artistGenreAdapter = ArtistGenreAdapter(requireContext())
 
         artistGenreAdapter.submitList(
             listOf(
@@ -144,7 +151,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initPlaylistBinds() {
-        playlistAdapter = PlaylistAdapter(this)
+        playlistAdapter = PlaylistAdapter(requireContext())
 
         playlistAdapter.submitList(
             listOf(
@@ -169,7 +176,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initOtherMusicBinds() {
-        otherMusicAdapter = OtherMusicAdapter(this)
+        otherMusicAdapter = OtherMusicAdapter(requireContext())
 
         otherMusicAdapter.submitList(
             listOf(
@@ -194,7 +201,7 @@ class ArtistActivity : BindingActivity<ActivityArtistBinding>(ActivityArtistBind
     }
 
     private fun initIncludedMusicBinds() {
-        includedMusicAdapter = IncludedMusicAdapter(this)
+        includedMusicAdapter = IncludedMusicAdapter(requireContext())
 
         includedMusicAdapter.submitList(
             listOf(
