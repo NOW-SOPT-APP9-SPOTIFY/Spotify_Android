@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.nowsopt.spotify.databinding.FragmentArtistBinding
-import com.nowsopt.spotify.presentation.main.artist.album.MockPopularAlbumModel
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockArtistGenreModel
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockIncludedMusic
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPlaylistModel
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularMusicModel
 import com.nowsopt.spotify.presentation.main.artist.album.PopularAlbumAdapter
 import com.nowsopt.spotify.presentation.main.artist.genre.ArtistGenreAdapter
-import com.nowsopt.spotify.presentation.main.artist.genre.MockArtistGenreModel
 import com.nowsopt.spotify.presentation.main.artist.included.IncludedMusicAdapter
-import com.nowsopt.spotify.presentation.main.artist.included.MockIncludedMusic
-import com.nowsopt.spotify.presentation.main.artist.other.MockOtherMusic
 import com.nowsopt.spotify.presentation.main.artist.other.OtherMusicAdapter
-import com.nowsopt.spotify.presentation.main.artist.playlist.MockPlaylistModel
 import com.nowsopt.spotify.presentation.main.artist.playlist.PlaylistAdapter
-import com.nowsopt.spotify.presentation.main.artist.popular.MockPopularMusicModel
 import com.nowsopt.spotify.presentation.main.artist.popular.PopularMusicAdapter
 import com.nowsopt.spotify.util.base.BindingFragment
 

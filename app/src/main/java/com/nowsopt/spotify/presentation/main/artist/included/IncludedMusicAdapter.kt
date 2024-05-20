@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.nowsopt.spotify.databinding.ItemIncludedMusicBinding
 import com.nowsopt.spotify.util.ItemDiffCallback
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockIncludedMusic
 
 class IncludedMusicAdapter(
     context: Context

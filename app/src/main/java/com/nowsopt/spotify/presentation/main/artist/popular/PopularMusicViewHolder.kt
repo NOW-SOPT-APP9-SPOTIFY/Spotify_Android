@@ -3,6 +3,7 @@ package com.nowsopt.spotify.presentation.main.artist.popular
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemPopularMusicBinding
 import java.text.DecimalFormat
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularMusicModel
 
 class PopularMusicViewHolder(
     private val binding: ItemPopularMusicBinding

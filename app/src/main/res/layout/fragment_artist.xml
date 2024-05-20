@@ -121,7 +121,8 @@
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:contentInsetStart="0dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -132,7 +133,7 @@
                     android:id="@+id/tv_music"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="19.5dp"
+                    android:layout_marginStart="16.5dp"
                     android:text="@string/artist_music"
                     android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
                     app:layout_constraintStart_toStartOf="parent"

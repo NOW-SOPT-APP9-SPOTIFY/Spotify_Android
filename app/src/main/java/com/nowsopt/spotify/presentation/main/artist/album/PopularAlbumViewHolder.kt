@@ -3,6 +3,7 @@ package com.nowsopt.spotify.presentation.main.artist.album
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ItemPopularAlbumBinding
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel
 
 class PopularAlbumViewHolder(
     private val binding: ItemPopularAlbumBinding

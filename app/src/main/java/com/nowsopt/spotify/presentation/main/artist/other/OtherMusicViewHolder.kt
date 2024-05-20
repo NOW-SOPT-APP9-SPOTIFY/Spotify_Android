@@ -2,6 +2,7 @@ package com.nowsopt.spotify.presentation.main.artist.other
 
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemOtherMusicBinding
+import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
 
 class OtherMusicViewHolder(
     private val binding: ItemOtherMusicBinding
