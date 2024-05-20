@@ -1,6 +1,10 @@
 package com.nowsopt.spotify.presentation.main.home.preference
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,9 +66,20 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
 
         // 임시 이미지 넣음
         with(binding) {
-            ivHomePreferenceProfile.load("https://avatars.githubusercontent.com/u/52882799?v=4") {
+            ivHomePreferenceProfile.load(R.drawable.img_profile_23) {
                 transformations(CircleCropTransformation())
             }
+
+            // 서버에서 유저 이름을 준다면 활용할 예정
+            val spannableString = SpannableString(tvHomePreferenceProfileName.text)
+            spannableString.setSpan(
+                StyleSpan(Typeface.BOLD),
+                0,
+                12,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            tvHomePreferenceProfileName.text = spannableString
+
             rvHomePreference.adapter = homePreferenceMusicAdapter
         }
     }

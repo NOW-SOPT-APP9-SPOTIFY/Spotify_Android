@@ -14,18 +14,18 @@
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_foreground" />
+        tools:src="@drawable/img_profile_23" />
 
     <TextView
         android:id="@+id/tv_home_preference_profile_name"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_profile"
         app:layout_constraintStart_toEndOf="@id/iv_home_preference_profile"
         app:layout_constraintTop_toTopOf="@id/iv_home_preference_profile"
-        tools:text="Taylor Swift과(와) 비슷한 아티스트 더 찾기" />
-
+        android:text="Taylor Swift과(와) 비슷한 아티스트 더 찾기" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_preference"
