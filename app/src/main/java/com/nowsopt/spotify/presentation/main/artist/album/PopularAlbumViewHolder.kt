@@ -1,6 +1,8 @@
 package com.nowsopt.spotify.presentation.main.artist.album
 
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ItemPopularAlbumBinding
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel

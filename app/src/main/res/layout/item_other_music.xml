@@ -5,7 +5,7 @@
     android:layout_marginEnd="12dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/iv_other_artist"
         android:layout_width="0dp"
         android:layout_height="0dp"
