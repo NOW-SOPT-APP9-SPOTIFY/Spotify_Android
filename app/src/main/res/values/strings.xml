@@ -2,4 +2,21 @@
     <string name="app_name">spotify</string>
 
     <string name="BINDING_ERROR">BINDING ERROR</string>
+
+    <!-- artist -->
+    <string name="artist_monthly_audience">월별 청취자</string>
+    <string name="artist_follow">팔로우하기</string>
+    <string name="artist_music">음악</string>
+    <string name="artist_event">이벤트</string>
+    <string name="artist_merch">Merch</string>
+    <string name="artist_popular">인기</string>
+    <string name="recommend_artist">아티스트 추천</string>
+    <string name="shared_person">공유한 사람</string>
+    <string name="music_popular">인기 음악</string>
+    <string name="see_discography">디스코그래피 보기</string>
+    <string name="detail_description">상세정보</string>
+    <string name="artist_playlist">아티스트 플레이리스트</string>
+    <string name="other_music_fan_like">팬들이 좋아하는 다른 음악</string>
+    <string name="included_music">수록된 작품</string>
+    <string name="popular_album_release">%1$s · 앨범</string>
 </resources>
