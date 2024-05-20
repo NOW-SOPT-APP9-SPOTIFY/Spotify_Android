@@ -26,7 +26,7 @@ class ChartTopperFragment : BindingFragment<FragmentChartTopperBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
-        navigateToArtist()
+        backButtonClickListener()
     }
 
     private fun initBinds() {
@@ -35,7 +35,7 @@ class ChartTopperFragment : BindingFragment<FragmentChartTopperBinding>() {
         binding.rvChartTopper.adapter = chartTopperAdapter
     }
 
-    private fun navigateToArtist() {
+    private fun backButtonClickListener() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }

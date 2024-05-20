@@ -44,7 +44,7 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
-        navigateToChartTopper()
+        chartTopperArrowButtonClickListener()
     }
 
     private fun initBinds() {
@@ -112,7 +112,7 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         }
     }
 
-    private fun navigateToChartTopper() {
+    private fun chartTopperArrowButtonClickListener() {
         binding.btnChartTopperArrow.setOnClickListener {
             findNavController().navigate(R.id.action_artist_fragment_to_chartTopperFragment)
         }
