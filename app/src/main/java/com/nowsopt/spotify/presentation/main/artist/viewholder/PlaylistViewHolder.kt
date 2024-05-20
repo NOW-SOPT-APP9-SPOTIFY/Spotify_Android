@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.main.artist.playlist
+package com.nowsopt.spotify.presentation.main.artist.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemArtistPlaylistBinding

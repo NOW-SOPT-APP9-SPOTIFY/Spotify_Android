@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.main.artist.other
+package com.nowsopt.spotify.presentation.main.artist.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
