@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="14dp"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Bruno Mars - Grenade" />
@@ -143,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="72dp"
+                android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
                 app:layout_constraintStart_toEndOf="@id/iv_home_preference_music_album_mini"
                 app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album"
                 tools:text="Doo-Wops &amp; Hooligans" />
@@ -151,6 +153,7 @@
                 android:id="@+id/tv_home_preference_music_album_mini"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr2"
                 app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title_mini"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title_mini"
                 tools:text="앨범 · Bruno Mars" />
@@ -183,9 +186,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="7dp"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
+                app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_play"
                 app:layout_constraintEnd_toStartOf="@id/iv_home_preference_play"
                 app:layout_constraintTop_toTopOf="@id/iv_home_preference_play"
-                app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_play"
                 tools:text="2010 · 10곡" />
 
             <ImageView

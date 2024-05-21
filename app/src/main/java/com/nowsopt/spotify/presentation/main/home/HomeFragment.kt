@@ -9,6 +9,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.chip.Chip
 import com.nowsopt.spotify.R
@@ -16,10 +19,14 @@ import com.nowsopt.spotify.databinding.FragmentHomeBinding
 import com.nowsopt.spotify.presentation.main.home.main.HomeMainFragment
 import com.nowsopt.spotify.presentation.main.home.preference.HomePreferenceFragment
 import com.nowsopt.spotify.util.base.BindingFragment
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>() {
     private lateinit var fragmentStateAdapter: FragmentStateAdapter
     private lateinit var fragmentList: ArrayList<Fragment>
+    private val homeViewModel: HomeViewModel by viewModels()
+
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +36,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         setFragmentStateAdapter()
+        observeCurrentTab()
         setOnChipClickListener()
     }
 
@@ -47,28 +55,49 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
         }
     }
 
+    private fun observeCurrentTab() {
+        homeViewModel.currentTab.flowWithLifecycle(lifecycle).onEach { tab ->
+            when (tab) {
+                HomeTab.MAIN -> tabMain()
+                HomeTab.PREFERENCE -> tabPreference()
+            }
+        }.launchIn(lifecycleScope)
+    }
+
+    private fun tabMain() {
+        with(binding) {
+            toggleChipVisibility(
+                showChips = listOf(chipCh, chipPodcast, chipHeart),
+                hideChips = listOf(chipX),
+                duration = 300
+            )
+            setSelectedChipColorChanger(chipCh, R.color.gray40, R.color.white)
+
+            viewPager.setCurrentItem(0, false)
+        }
+    }
+
+    private fun tabPreference() {
+        with(binding) {
+            toggleChipVisibility(
+                showChips = listOf(chipCh, chipX),
+                hideChips = listOf(chipPodcast, chipHeart),
+                duration = 300
+            )
+            setSelectedChipColorChanger(chipCh, R.color.green, R.color.gray40)
+
+            viewPager.setCurrentItem(1, false)
+        }
+    }
+
     private fun setOnChipClickListener() {
         with(binding) {
             chipCh.setOnClickListener {
-                toggleChipVisibility(
-                    showChips = listOf(chipCh, chipX),
-                    hideChips = listOf(chipPodcast, chipHeart),
-                    duration = 300
-                )
-                setSelectedChipColorChanger(chipCh, R.color.green, R.color.gray40)
-
-                viewPager.setCurrentItem(1, false)
+                homeViewModel.setCurrentTab(HomeTab.PREFERENCE)
             }
 
             chipX.setOnClickListener {
-                toggleChipVisibility(
-                    showChips = listOf(chipCh, chipPodcast, chipHeart),
-                    hideChips = listOf(chipX),
-                    duration = 300
-                )
-                setSelectedChipColorChanger(chipCh, R.color.gray40, R.color.white)
-
-                viewPager.setCurrentItem(0, false)
+                homeViewModel.setCurrentTab(HomeTab.MAIN)
             }
         }
     }

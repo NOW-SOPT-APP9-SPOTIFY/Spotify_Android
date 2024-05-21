@@ -8,8 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topbar_home"
         android:layout_width="0dp"
-        android:paddingVertical="16dp"
         android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,7 +18,8 @@
             android:id="@+id/img_profile"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_spotify_gray_24"
+            android:contentDescription="@null"
+            android:src="@drawable/img_profile_30"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="취향"
                 android:textColor="@color/white"
+                android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
                 app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
                 app:chipStrokeColor="@android:color/transparent"
@@ -59,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="팟케스트"
+                android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
                 app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
                 app:chipStrokeColor="@android:color/transparent"
@@ -66,11 +69,12 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_heart"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="❤️"
                 app:chipBackgroundColor="@color/gray40"
                 app:chipCornerRadius="36dp"
+                app:chipIcon="@drawable/ic_heart_gray_24"
+                app:chipIconSize="24dp"
                 app:chipStrokeColor="@android:color/transparent"
                 app:rippleColor="@null" />
         </com.google.android.material.chip.ChipGroup>
@@ -80,9 +84,9 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topbar_home"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topbar_home" />
 </androidx.constraintlayout.widget.ConstraintLayout>
