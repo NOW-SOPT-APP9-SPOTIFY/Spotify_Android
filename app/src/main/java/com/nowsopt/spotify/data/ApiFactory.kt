@@ -2,6 +2,7 @@ package com.nowsopt.spotify.data
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.nowsopt.spotify.BuildConfig
+import com.nowsopt.spotify.data.service.ArtistService
 import com.nowsopt.spotify.data.service.TestService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -45,4 +46,5 @@ object ApiFactory {
 
 object ServicePool {
     val testService: TestService by lazy { ApiFactory.create() }
+    val artistService: ArtistService by lazy { ApiFactory.create() }
 }

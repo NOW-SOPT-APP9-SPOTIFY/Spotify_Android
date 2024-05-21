@@ -9,8 +9,8 @@ import com.nowsopt.spotify.util.ItemDiffCallback
 
 class ChartTopperAdapter(
     context: Context
-) : ListAdapter<ChartTopperModel, ChartTopperViewHolder>(
-    ItemDiffCallback<ChartTopperModel>(
+) : ListAdapter<Songs.Song, ChartTopperViewHolder>(
+    ItemDiffCallback<Songs.Song>(
         onContentsTheSame = { old, new -> old == new },
         onItemsTheSame = { old, new -> old == new }
     )

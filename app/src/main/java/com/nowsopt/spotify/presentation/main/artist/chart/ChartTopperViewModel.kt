@@ -1,38 +1,29 @@
 package com.nowsopt.spotify.presentation.main.artist.chart
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.nowsopt.spotify.data.ServicePool.artistService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
-class ChartTopperViewModel: ViewModel() {
-    val chartTopperData = listOf(
-        ChartTopperModel(
-            number = 1,
-            imageUrl = "imageUrl",
-            title = "title1",
-            like = 2022950208
-        ),
-        ChartTopperModel(
-            number = 2,
-            imageUrl = "imageUrl",
-            title = "title2",
-            like = 2022950208
-        ),
-        ChartTopperModel(
-            number = 3,
-            imageUrl = "imageUrl",
-            title = "title3",
-            like = 2022950208
-        ),
-        ChartTopperModel(
-            number = 4,
-            imageUrl = "imageUrl",
-            title = "title4",
-            like = 2022950208
-        ),
-        ChartTopperModel(
-            number = 5,
-            imageUrl = "imageUrl",
-            title = "title5",
-            like = 2022950208
-        )
-    )
+class ChartTopperViewModel : ViewModel() {
+    private val _chartTopperSong = MutableStateFlow<List<Songs.Song>>(emptyList())
+    val chartTopperSong: StateFlow<List<Songs.Song>> get() = _chartTopperSong
+
+    fun getChartTopper(artistId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                artistService.getChartTopper(artistId)
+            }.onSuccess { songs ->
+                songs.body()?.data?.songs?.let { song ->
+                    _chartTopperSong.value = song
+                }
+            }.onFailure {
+                it.printStackTrace()
+            }
+        }
+    }
+
 }
