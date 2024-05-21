@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
+    android:paddingEnd="16dp"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -22,14 +23,14 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/iv_home_main_card_mix_album"
+                android:id="@+id/iv_home_main_recommend_mix_album"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/img_home_main_card_mix_album" />
+                app:srcCompat="@drawable/img_home_main_recommend_mix_album" />
 
             <ImageView
-                android:id="@+id/iv_home_main_card_mix_logo"
+                android:id="@+id/iv_home_main_recommend_mix_logo"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -40,23 +41,23 @@
                 android:src="@drawable/ic_spotify_lime_16" />
 
             <TextView
-                android:id="@+id/tv_home_main_card_mix_theme"
+                android:id="@+id/tv_home_main_recommend_mix_theme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="6dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_home_main_card_mix_logo"
+                app:layout_constraintTop_toBottomOf="@+id/iv_home_main_recommend_mix_logo"
                 android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
                 tools:text="Favorites" />
 
             <TextView
-                android:id="@+id/tv_home_main_card_mix_mix"
+                android:id="@+id/tv_home_main_recommend_mix_mix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_home_main_card_mix_theme"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_main_recommend_mix_theme"
                 android:theme="@style/TextAppearance.Spotify.Body.Medium_en4"
                 tools:text="Mix" />
 
@@ -70,7 +71,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <TextView
-                    android:id="@+id/tv_home_main_card_mix_artist"
+                    android:id="@+id/tv_home_main_recommend_mix_artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"

@@ -4,23 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingEnd="16dp">
 
-    <!--인기 아티스트-->
+    <!--오늘의 최고 히트곡-->
 
     <ImageView
-        android:id="@+id/iv_home_main_btn1_album"
+        android:id="@+id/iv_home_main_today_hit_song_album"
         android:layout_width="142dp"
         android:layout_height="142dp"
-        app:srcCompat="@drawable/img_home_main_btn1_album" />
+        app:srcCompat="@drawable/img_home_main_today_hit_song_album" />
 
     <TextView
-        android:id="@+id/tv_home_main_btn1_artist"
+        android:id="@+id/tv_home_main_today_hit_song_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textAlignment="center"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
+        tools:text="Magnetic" />
+
+    <TextView
+        android:id="@+id/tv_home_main_today_hit_song_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
         tools:text="ILLIT" />
 
 </LinearLayout>

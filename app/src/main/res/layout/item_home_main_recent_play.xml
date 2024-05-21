@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingEnd="16dp">
 
     <!--최근 재생한 항목-->
 
     <ImageView
-        android:id="@+id/iv_home_main_btn4_album"
+        android:id="@+id/iv_home_main_recent_play_album"
         android:layout_width="91dp"
         android:layout_height="91dp"
-        app:srcCompat="@drawable/img_home_main_btn4_album" />
+        app:srcCompat="@drawable/img_home_main_recent_play_album" />
 
     <TextView
-        android:id="@+id/tv_home_main_btn4_title"
+        android:id="@+id/tv_home_main_recent_play_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

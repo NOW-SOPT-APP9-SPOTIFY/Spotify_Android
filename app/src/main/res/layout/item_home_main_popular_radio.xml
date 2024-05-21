@@ -4,29 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingEnd="16dp">
 
-    <!--오늘의 최고 히트곡-->
+    <!--인기 라디오-->
 
     <ImageView
-        android:id="@+id/iv_home_main_btn5_album"
+        android:id="@+id/iv_home_main_popular_radio_album"
         android:layout_width="142dp"
         android:layout_height="142dp"
-        app:srcCompat="@drawable/img_home_main_btn5_album" />
+        app:srcCompat="@drawable/img_home_main_popular_radio_album" />
 
     <TextView
-        android:id="@+id/tv_home_main_btn5_title"
+        android:id="@+id/tv_home_main_popular_radio_artist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
-        tools:text="Magnetic" />
-
-    <TextView
-        android:id="@+id/tv_home_main_btn5_artist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
-        tools:text="ILLIT" />
+        tools:text="Ariana Grande, LE SSERAFIM, NewJeans, T..." />
 
 </LinearLayout>

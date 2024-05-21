@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingEnd="16dp">
 
-    <!--인기 라디오-->
+    <!--인기 아티스트-->
 
     <ImageView
-        android:id="@+id/iv_home_main_btn2_album"
+        android:id="@+id/iv_home_main_popular_artist_album"
         android:layout_width="142dp"
         android:layout_height="142dp"
-        app:srcCompat="@drawable/img_home_main_btn2_album" />
+        app:srcCompat="@drawable/img_home_main_popular_artist_album" />
 
     <TextView
-        android:id="@+id/tv_home_main_btn2_artist"
+        android:id="@+id/tv_home_main_popular_artist_artist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:maxLines="2"
+        android:textAlignment="center"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
-        tools:text="Ariana Grande, LE SSERAFIM, NewJeans, T..." />
+        tools:text="ILLIT" />
 
 </LinearLayout>
