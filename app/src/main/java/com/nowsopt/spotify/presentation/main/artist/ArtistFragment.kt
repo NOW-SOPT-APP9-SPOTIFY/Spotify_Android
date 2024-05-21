@@ -2,9 +2,12 @@ package com.nowsopt.spotify.presentation.main.artist
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentArtistBinding
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.ALBUM
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.GENRE
@@ -37,10 +40,11 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         container: ViewGroup?
     ): FragmentArtistBinding = FragmentArtistBinding.inflate(inflater, container, false)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         initBinds()
+        chartTopperArrowButtonClickListener()
     }
 
     private fun initBinds() {
@@ -105,6 +109,12 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
             rvArtistPlaylist.adapter = playlistAdapter
             rvOtherMusic.adapter = otherMusicAdapter
             rvIncludedMusic.adapter = includedMusicAdapter
+        }
+    }
+
+    private fun chartTopperArrowButtonClickListener() {
+        binding.btnChartTopperArrow.setOnClickListener {
+            findNavController().navigate(R.id.action_artist_fragment_to_chartTopperFragment)
         }
     }
 }

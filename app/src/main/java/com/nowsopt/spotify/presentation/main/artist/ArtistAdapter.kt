@@ -23,12 +23,12 @@ import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPlaylistModel
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel
 import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularMusicModel
-import com.nowsopt.spotify.presentation.main.artist.album.PopularAlbumViewHolder
-import com.nowsopt.spotify.presentation.main.artist.genre.ArtistGenreViewHolder
-import com.nowsopt.spotify.presentation.main.artist.included.IncludedMusicViewHolder
-import com.nowsopt.spotify.presentation.main.artist.other.OtherMusicViewHolder
-import com.nowsopt.spotify.presentation.main.artist.playlist.PlaylistViewHolder
-import com.nowsopt.spotify.presentation.main.artist.popular.PopularMusicViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.PopularAlbumViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.ArtistGenreViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.IncludedMusicViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.OtherMusicViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.PlaylistViewHolder
+import com.nowsopt.spotify.presentation.main.artist.viewholder.PopularMusicViewHolder
 import com.nowsopt.spotify.util.ItemDiffCallback
 
 class ArtistAdapter(
