@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <!--들어볼만한 Show-->
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/iv_home_main_btn3_album"
         android:layout_width="144dp"
-        android:layout_height="193dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="144dp"
+        app:srcCompat="@drawable/img_home_main_btn3_album" />
 
-        <ImageView
-            android:id="@+id/iv_home_main_btn3_album"
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            app:srcCompat="@drawable/img_home_main_btn3_album" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="140dp"
-            android:layout_height="41dp"
-            android:orientation="vertical"
-            android:layout_marginTop="8dp">
+        <TextView
+            android:id="@+id/tv_home_main_btn3_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextAppearance.Spotify.Body.Small_kr"
+            android:textColor="@color/green"
+            tools:text="사회 및 문화" />
 
-            <TextView
-                android:id="@+id/tv_home_main_btn3_genre"
-                android:layout_width="wrap_content"
-                android:layout_height="13dp"
-                android:text="사회 및 문화" />
+        <TextView
+            android:id="@+id/tv_home_main_btn3_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextAppearance.Spotify.Body.regular_en_bold"
+            tools:text="Podcast Malam Kliwon" />
 
-            <TextView
-                android:id="@+id/tv_home_main_btn3_title"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="Podcast Malam Kliwon" />
-
-            <TextView
-                android:id="@+id/tv_home_main_btn3_artist"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="프로그램 · Podkesmas Asia" />
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/tv_home_main_btn3_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
+            tools:text="프로그램 · Podkesmas Asia" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

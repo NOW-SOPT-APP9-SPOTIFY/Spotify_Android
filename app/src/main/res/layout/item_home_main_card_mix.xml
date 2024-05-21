@@ -2,69 +2,90 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <!--나만을 위한 추천-->
 
-    <ImageView
-        android:id="@+id/iv_home_main_card_mix_album"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.cardview.widget.CardView
         android:layout_width="150dp"
         android:layout_height="199dp"
-        android:background="@drawable/img_home_main_card_mix_album"/>
-
-    <ImageView
-        android:id="@+id/iv_home_main_card_mix_logo"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:padding="4dp"
-        app:layout_constraintStart_toStartOf="@+id/iv_home_main_card_mix_album"
-        app:layout_constraintTop_toTopOf="@+id/iv_home_main_card_mix_album"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/ic_spotify_lime_16" />
-
-    <TextView
-        android:id="@+id/tv_home_main_card_mix_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:text="Favorites"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="10dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_home_main_card_mix_logo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/tv_home_main_card_mix_mix"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:text="Mix"
-        android:layout_marginStart="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_home_main_card_mix_theme" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="150dp"
-        android:layout_height="47dp"
-        android:background="@color/blue10"
-        android:paddingHorizontal="4dp"
-        android:paddingVertical="8dp"
-        app:layout_constraintStart_toStartOf="@id/iv_home_main_card_mix_album"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_home_main_card_mix_album">
+            <ImageView
+                android:id="@+id/iv_home_main_card_mix_album"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_home_main_card_mix_album" />
 
-        <TextView
-            android:id="@+id/tv_home_main_card_mix_artist"
-            android:layout_width="133dp"
-            android:layout_height="30dp"
-            android:text="LE SSERAFIM,  ILLIT, (여자) 아이들, BABY MONSTER,..."
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/iv_home_main_card_mix_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="10dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_spotify_lime_16" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_home_main_card_mix_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_home_main_card_mix_logo"
+                android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
+                tools:text="Favorites" />
 
+            <TextView
+                android:id="@+id/tv_home_main_card_mix_mix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_main_card_mix_theme"
+                android:theme="@style/TextAppearance.Spotify.Body.Medium_en4"
+                tools:text="Mix" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue10"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_home_main_card_mix_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                    tools:text="LE SSERAFIM,  ILLIT, (여자) 아이들, BABY MONSTER,..." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
