@@ -25,7 +25,7 @@ class ChartTopperAdapter(
         )
 
     override fun onBindViewHolder(holder: ChartTopperViewHolder, position: Int) {
-        holder.onBind(currentList[position])
+        holder.onBind(currentList[position], position)
     }
 
     override fun getItemCount(): Int = currentList.size
