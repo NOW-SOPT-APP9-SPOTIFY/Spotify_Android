@@ -5,18 +5,27 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
+import com.nowsopt.spotify.data.model.response.Albums
 import com.nowsopt.spotify.databinding.FragmentHomePreferenceBinding
+import com.nowsopt.spotify.presentation.main.home.HomeViewModel
 import com.nowsopt.spotify.util.base.BindingFragment
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() {
     private lateinit var homePreferenceMusicAdapter: HomePreferenceMusicAdapter
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
@@ -28,6 +37,12 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
+
+        homeViewModel.getAlbums()
+        homeViewModel.recommendAlbums.flowWithLifecycle(lifecycle).onEach { album ->
+            submitList(album)
+        }.launchIn(lifecycleScope)
+
     }
 
     private fun initBinds() {
@@ -36,33 +51,6 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
                 // 클릭시 화면 이동 로직 구현 -> 블러 화면
                 findNavController().navigate(R.id.action_home_navigation_to_musicDetailFragment)
             }
-
-        // 추후 서버에서 값 받아온 처리 전 일단 임시로 넣어둠
-        homePreferenceMusicAdapter.submitList(
-            listOf(
-                MockMusicModel(
-                    title = "title1",
-                    artist = "artist",
-                    album = "album",
-                    imageUrl = "imageUrl",
-                    isBookmark = false
-                ),
-                MockMusicModel(
-                    title = "title2",
-                    artist = "artist",
-                    album = "album",
-                    imageUrl = "imageUrl",
-                    isBookmark = false
-                ),
-                MockMusicModel(
-                    title = "title3",
-                    artist = "artist",
-                    album = "album",
-                    imageUrl = "imageUrl",
-                    isBookmark = false
-                ),
-            )
-        )
 
         // 임시 이미지 넣음
         with(binding) {
@@ -82,5 +70,9 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
 
             rvHomePreference.adapter = homePreferenceMusicAdapter
         }
+    }
+
+    private fun submitList(list: List<Albums.Album>) {
+        homePreferenceMusicAdapter.submitList(list)
     }
 }

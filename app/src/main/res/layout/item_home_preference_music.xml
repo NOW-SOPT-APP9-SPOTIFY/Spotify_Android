@@ -190,7 +190,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_play"
                 app:layout_constraintEnd_toStartOf="@id/iv_home_preference_play"
                 app:layout_constraintTop_toTopOf="@id/iv_home_preference_play"
-                tools:text="2010 · 10곡" />
+                android:text="2010 · 10곡" />
 
             <ImageView
                 android:id="@+id/iv_home_preference_play"
