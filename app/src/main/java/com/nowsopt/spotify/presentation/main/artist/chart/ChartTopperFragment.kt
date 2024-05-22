@@ -1,15 +1,17 @@
 package com.nowsopt.spotify.presentation.main.artist.chart
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentChartTopperBinding
 import com.nowsopt.spotify.util.base.BindingFragment
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 
 class ChartTopperFragment : BindingFragment<FragmentChartTopperBinding>() {
@@ -26,20 +28,29 @@ class ChartTopperFragment : BindingFragment<FragmentChartTopperBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
+        getChartTopper()
+        observeChartTopper()
         backButtonClickListener()
+    }
+
+    private fun getChartTopper() = chartTopperViewModel.getChartTopper(1)
+
+    private fun observeChartTopper() {
+        chartTopperViewModel.chartTopperSong.flowWithLifecycle(lifecycle).onEach { song ->
+            submitChartTopperList(song)
+        }.launchIn(lifecycleScope)
     }
 
     private fun initBinds() {
         chartTopperAdapter = ChartTopperAdapter(requireContext())
-        chartTopperAdapter.submitList(chartTopperViewModel.chartTopperData)
         binding.rvChartTopper.adapter = chartTopperAdapter
     }
+
+    private fun submitChartTopperList(data: List<Songs.Song>) = chartTopperAdapter.submitList(data)
 
     private fun backButtonClickListener() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
     }
-
-
 }

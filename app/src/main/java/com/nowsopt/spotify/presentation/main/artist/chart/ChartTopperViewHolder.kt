@@ -10,11 +10,11 @@ class ChartTopperViewHolder(
     private val binding: ItemChartTopperBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind(chartTopperModel: ChartTopperModel) {
+    fun onBind(data: Songs.Song, position: Int) {
         with(binding) {
-            tvNumber.text = chartTopperModel.number.toString()
-            tvTitle.text = chartTopperModel.title
-            tvLike.text = DecimalFormat("#,###").format(chartTopperModel.like)
+            tvNumber.text = (position + 1).toString()
+            tvTitle.text = data.title
+            tvLike.text = DecimalFormat("#,###").format(data.listenedCount)
             ivChartTopper.load(R.drawable.img_bruno)
         }
     }
