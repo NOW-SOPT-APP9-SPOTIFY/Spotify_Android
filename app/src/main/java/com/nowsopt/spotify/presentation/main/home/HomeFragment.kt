@@ -1,6 +1,7 @@
 package com.nowsopt.spotify.presentation.main.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,11 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        homeViewModel.getAlbums()
+        homeViewModel.recommendAlbums.flowWithLifecycle(lifecycle).onEach { song ->
+            Log.e("TAG", "onViewCreated: $song", )
+        }.launchIn(lifecycleScope)
 
         setFragmentStateAdapter()
         observeCurrentTab()
