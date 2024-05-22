@@ -31,6 +31,19 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tv_artist"
+                    android:theme="@style/TextAppearance.Spotify.Header.h1_en_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    app:layout_constraintStart_toStartOf="@id/iv_artist"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_artist"
+                    tools:text="Bruno Mars"
+                    android:textColor="@color/white"
+                    android:includeFontPadding="false"
+                    />
+
+                <TextView
                     android:id="@+id/tv_monthly_audience"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

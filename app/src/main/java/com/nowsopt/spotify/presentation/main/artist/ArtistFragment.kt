@@ -60,8 +60,13 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
 
     private fun observeArtistDetail() {
         artistViewModel.detail.flowWithLifecycle(lifecycle).onEach { data ->
+            data?.artistName?.let { showArtistDetail(it) }
             artistDetailAdapter.submitList(data?.songs)
         }.launchIn(lifecycleScope)
+    }
+
+    private fun showArtistDetail(artistName: String) {
+        binding.tvArtist.text = artistName
     }
 
     private fun initArtistDetailBinds() {
