@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,12 +36,8 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
-
-        homeViewModel.getAlbums()
-        homeViewModel.recommendAlbums.flowWithLifecycle(lifecycle).onEach { album ->
-            submitList(album)
-        }.launchIn(lifecycleScope)
-
+        getAlbums()
+        observeRecommendAlbums()
     }
 
     private fun initBinds() {
@@ -52,7 +47,6 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
                 findNavController().navigate(R.id.action_home_navigation_to_musicDetailFragment)
             }
 
-        // 임시 이미지 넣음
         with(binding) {
             ivHomePreferenceProfile.load(R.drawable.img_profile_23) {
                 transformations(CircleCropTransformation())
@@ -70,6 +64,16 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
 
             rvHomePreference.adapter = homePreferenceMusicAdapter
         }
+    }
+
+    private fun getAlbums() {
+        homeViewModel.getAlbums()
+    }
+
+    private fun observeRecommendAlbums() {
+        homeViewModel.recommendAlbums.flowWithLifecycle(lifecycle).onEach { album ->
+            submitList(album)
+        }.launchIn(lifecycleScope)
     }
 
     private fun submitList(list: List<Albums.Album>) {
