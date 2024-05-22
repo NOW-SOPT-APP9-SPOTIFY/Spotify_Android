@@ -10,25 +10,22 @@ import com.nowsopt.spotify.databinding.ItemArtistPlaylistBinding
 import com.nowsopt.spotify.databinding.ItemIncludedMusicBinding
 import com.nowsopt.spotify.databinding.ItemOtherMusicBinding
 import com.nowsopt.spotify.databinding.ItemPopularAlbumBinding
-import com.nowsopt.spotify.databinding.ItemPopularMusicBinding
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.ALBUM
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.GENRE
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.INCLUDED
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.OTHER
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.PLAYLIST
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.POPULAR_MUSIC
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockArtistGenreModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockIncludedMusic
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPlaylistModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularMusicModel
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockArtistGenreModel
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockIncludedMusic
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockOtherMusic
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockPlaylistModel
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockPopularAlbumModel
 import com.nowsopt.spotify.presentation.main.artist.viewholder.PopularAlbumViewHolder
 import com.nowsopt.spotify.presentation.main.artist.viewholder.ArtistGenreViewHolder
 import com.nowsopt.spotify.presentation.main.artist.viewholder.IncludedMusicViewHolder
 import com.nowsopt.spotify.presentation.main.artist.viewholder.OtherMusicViewHolder
 import com.nowsopt.spotify.presentation.main.artist.viewholder.PlaylistViewHolder
-import com.nowsopt.spotify.presentation.main.artist.viewholder.PopularMusicViewHolder
 import com.nowsopt.spotify.util.ItemDiffCallback
 
 class ArtistAdapter(
@@ -47,8 +44,7 @@ class ArtistAdapter(
             GENRE -> ArtistGenreViewHolder(ItemArtistGenreBinding.inflate(inflater, parent, false))
             INCLUDED -> IncludedMusicViewHolder(ItemIncludedMusicBinding.inflate(inflater, parent, false))
             OTHER -> OtherMusicViewHolder(ItemOtherMusicBinding.inflate(inflater, parent, false))
-            PLAYLIST -> PlaylistViewHolder(ItemArtistPlaylistBinding.inflate(inflater, parent, false))
-            else -> PopularMusicViewHolder(ItemPopularMusicBinding.inflate(inflater, parent, false))
+            else -> PlaylistViewHolder(ItemArtistPlaylistBinding.inflate(inflater, parent, false))
         }
     }
 
@@ -60,8 +56,7 @@ class ArtistAdapter(
             GENRE -> (holder as ArtistGenreViewHolder).onBind(item as MockArtistGenreModel)
             INCLUDED -> (holder as IncludedMusicViewHolder).onBind(item as MockIncludedMusic)
             OTHER -> (holder as OtherMusicViewHolder).onBind(item as MockOtherMusic)
-            PLAYLIST -> (holder as PlaylistViewHolder).onBind(item as MockPlaylistModel)
-            else -> (holder as PopularMusicViewHolder).onBind(item as MockPopularMusicModel)
+            else -> (holder as PlaylistViewHolder).onBind(item as MockPlaylistModel)
         }
     }
 
@@ -71,10 +66,7 @@ class ArtistAdapter(
             is MockArtistGenreModel -> GENRE
             is MockIncludedMusic -> INCLUDED
             is MockOtherMusic -> OTHER
-            is MockPlaylistModel -> PLAYLIST
-            else -> POPULAR_MUSIC
+            else -> PLAYLIST
         }
     }
-
-
 }

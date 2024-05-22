@@ -1,34 +1,16 @@
 package com.nowsopt.spotify.presentation.main.artist
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.nowsopt.spotify.data.ServicePool.artistService
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistDetailResponse
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class ArtistViewModel : ViewModel() {
-    val popularMusicData = listOf(
-        ArtistModel.MockPopularMusicModel(
-            number = 1,
-            imageUrl = "imageUrl",
-            title = "title1",
-            like = 2022950208
-        ),
-        ArtistModel.MockPopularMusicModel(
-            number = 2,
-            imageUrl = "imageUrl",
-            title = "title2",
-            like = 2022950208
-        ),
-        ArtistModel.MockPopularMusicModel(
-            number = 3,
-            imageUrl = "imageUrl",
-            title = "title3",
-            like = 2022950208
-        ),
-        ArtistModel.MockPopularMusicModel(
-            number = 4,
-            imageUrl = "imageUrl",
-            title = "title4",
-            like = 2022950208
-        )
-    )
     val popularAlbumData = listOf(
         ArtistModel.MockPopularAlbumModel(
             title = "title1",
@@ -118,4 +100,21 @@ class ArtistViewModel : ViewModel() {
             release = 2024
         )
     )
+
+    private val _detail = MutableStateFlow<ArtistDetailResponse?>(null)
+    val detail: StateFlow<ArtistDetailResponse?> get() = _detail
+
+    fun getArtistDetail(artistId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                artistService.getArtistDetail(artistId)
+            }.onSuccess { response ->
+                _detail.value = response.body()?.data
+            }.onFailure {
+                it.printStackTrace()
+            }
+        }
+    }
+
+
 }

@@ -4,13 +4,14 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ItemChartTopperBinding
+import com.nowsopt.spotify.presentation.main.artist.model.Song
 import java.text.DecimalFormat
 
 class ChartTopperViewHolder(
     private val binding: ItemChartTopperBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind(data: Songs.Song, position: Int) {
+    fun onBind(data: Song, position: Int) {
         with(binding) {
             tvNumber.text = (position + 1).toString()
             tvTitle.text = data.title

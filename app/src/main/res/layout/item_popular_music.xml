@@ -25,8 +25,8 @@
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_music_number"
-        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="19dp"
         android:layout_marginVertical="8dp"/>
 
     <TextView

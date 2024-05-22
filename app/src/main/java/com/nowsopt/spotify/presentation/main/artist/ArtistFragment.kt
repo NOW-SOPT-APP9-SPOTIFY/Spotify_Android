@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentArtistBinding
@@ -15,18 +16,14 @@ import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.INC
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.OTHER
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.PLAYLIST
 import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.POPULAR_MUSIC
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockArtistGenreModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockIncludedMusic
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPlaylistModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularAlbumModel
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPopularMusicModel
-import com.nowsopt.spotify.util.base.BindingActivity
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
 import com.nowsopt.spotify.util.base.BindingFragment
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
 
-    private lateinit var popularMusicAdapter: ArtistAdapter
+    private lateinit var artistDetailAdapter: ArtistDetailAdapter
     private lateinit var popularAlbumAdapter: ArtistAdapter
     private lateinit var artistGenreAdapter: ArtistAdapter
     private lateinit var playlistAdapter: ArtistAdapter
@@ -44,11 +41,13 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
+        getArtistDetail()
+        observeArtistDetail()
         chartTopperArrowButtonClickListener()
     }
 
     private fun initBinds() {
-        initPopularMusicBinds()
+        initArtistDetailBinds()
         initPopularAlbumBinds()
         initArtistGenreBinds()
         initPlaylistBinds()
@@ -57,9 +56,16 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         connectAdapter()
     }
 
-    private fun initPopularMusicBinds() {
-        popularMusicAdapter = initAdapter()
-        submitData(POPULAR_MUSIC, artistViewModel.popularMusicData)
+    private fun getArtistDetail() = artistViewModel.getArtistDetail(1)
+
+    private fun observeArtistDetail() {
+        artistViewModel.detail.flowWithLifecycle(lifecycle).onEach { data ->
+            artistDetailAdapter.submitList(data?.songs)
+        }.launchIn(lifecycleScope)
+    }
+
+    private fun initArtistDetailBinds() {
+        artistDetailAdapter = ArtistDetailAdapter(requireContext())
     }
 
     private fun initPopularAlbumBinds() {
@@ -95,14 +101,13 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
             OTHER -> otherMusicAdapter.submitList(data)
             PLAYLIST -> playlistAdapter.submitList(data)
             GENRE -> artistGenreAdapter.submitList(data)
-            ALBUM -> popularAlbumAdapter.submitList(data)
-            POPULAR_MUSIC -> popularMusicAdapter.submitList(data)
+            else -> popularAlbumAdapter.submitList(data)
         }
     }
 
     private fun connectAdapter() {
         with(binding) {
-            rvPopularMusic.adapter = popularMusicAdapter
+            rvPopularMusic.adapter = artistDetailAdapter
             rvPopularAlbum.adapter = popularAlbumAdapter
             tvGenreTitle.text = "Bruno Mars 장르"
             rvArtistGenre.adapter = artistGenreAdapter

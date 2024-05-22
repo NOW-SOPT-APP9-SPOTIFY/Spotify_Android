@@ -2,7 +2,7 @@ package com.nowsopt.spotify.presentation.main.artist.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemArtistPlaylistBinding
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockPlaylistModel
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockPlaylistModel
 
 class PlaylistViewHolder(
     private val binding: ItemArtistPlaylistBinding

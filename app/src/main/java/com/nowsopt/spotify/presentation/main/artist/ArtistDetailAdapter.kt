@@ -1,16 +1,17 @@
-package com.nowsopt.spotify.presentation.main.artist.chart
+package com.nowsopt.spotify.presentation.main.artist
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.nowsopt.spotify.databinding.ItemChartTopperBinding
+import com.nowsopt.spotify.databinding.ItemPopularMusicBinding
 import com.nowsopt.spotify.presentation.main.artist.model.Song
+import com.nowsopt.spotify.presentation.main.artist.viewholder.ArtistDetailViewHolder
 import com.nowsopt.spotify.util.ItemDiffCallback
 
-class ChartTopperAdapter(
+class ArtistDetailAdapter(
     context: Context
-) : ListAdapter<Song, ChartTopperViewHolder>(
+): ListAdapter<Song, ArtistDetailViewHolder>(
     ItemDiffCallback<Song>(
         onContentsTheSame = { old, new -> old == new },
         onItemsTheSame = { old, new -> old == new }
@@ -20,12 +21,12 @@ class ChartTopperAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ChartTopperViewHolder =
-        ChartTopperViewHolder(
-            binding = ItemChartTopperBinding.inflate(inflater, parent, false)
+    ): ArtistDetailViewHolder =
+        ArtistDetailViewHolder(
+            binding = ItemPopularMusicBinding.inflate(inflater, parent, false)
         )
 
-    override fun onBindViewHolder(holder: ChartTopperViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ArtistDetailViewHolder, position: Int) {
         holder.onBind(currentList[position], position)
     }
 

@@ -5,7 +5,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.ItemOtherMusicBinding
-import com.nowsopt.spotify.presentation.main.artist.ArtistModel.MockOtherMusic
+import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockOtherMusic
 
 class OtherMusicViewHolder(
     private val binding: ItemOtherMusicBinding
