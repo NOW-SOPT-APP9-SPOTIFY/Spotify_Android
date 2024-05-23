@@ -1,6 +1,5 @@
 package com.nowsopt.spotify.presentation.main.home.main
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemHomeMainListenableShowBinding
 import com.nowsopt.spotify.databinding.ItemHomeMainPopularArtistBinding
@@ -55,7 +54,7 @@ class HomeMainViewHolder {
 
     class ListenableShowViewHolder(
         private val binding: ItemHomeMainListenableShowBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(listenableShow: HomeMainModel.ListenableShow) {
             with(binding) {
                 tvHomeMainListenableShowGenre.text = listenableShow.genre
@@ -67,7 +66,7 @@ class HomeMainViewHolder {
 
     class PopularRadioViewHolder(
         private val binding: ItemHomeMainPopularRadioBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(popularRadio: HomeMainModel.PopularRadio) {
             with(binding) {
                 tvHomeMainPopularRadioArtist.text = popularRadio.artists

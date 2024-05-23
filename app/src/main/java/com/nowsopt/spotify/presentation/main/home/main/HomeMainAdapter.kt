@@ -31,26 +31,32 @@ class HomeMainAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 val binding = ItemHomeMainRecommendMixBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.RecommendMixViewHolder(binding)
             }
+
             TYPE_TODAY_HIT_SONG -> {
                 val binding = ItemHomeMainTodayHitSongBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.TodayHitSongViewHolder(binding)
             }
+
             TYPE_POPULAR_ARTIST -> {
                 val binding = ItemHomeMainPopularArtistBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.PopularArtistViewHolder(binding)
             }
+
             TYPE_RECENT_PLAY -> {
                 val binding = ItemHomeMainRecentPlayBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.RecentPlayViewHolder(binding)
             }
+
             TYPE_LISTENABLE_SHOW -> {
                 val binding = ItemHomeMainListenableShowBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.ListenableShowViewHolder(binding)
             }
+
             TYPE_POPULAR_RADIO -> {
                 val binding = ItemHomeMainPopularRadioBinding.inflate(inflater, parent, false)
                 HomeMainViewHolder.PopularRadioViewHolder(binding)
             }
+
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }

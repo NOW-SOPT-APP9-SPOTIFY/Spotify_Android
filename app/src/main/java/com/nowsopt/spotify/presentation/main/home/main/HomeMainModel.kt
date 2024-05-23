@@ -5,33 +5,33 @@ sealed class HomeMainModel {
         val imageUrl: String,
         val theme: String,
         val artists: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 
     data class TodayHitSong(
         val imageUrl: String,
         val title: String,
         val artist: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 
     data class PopularArtist(
         val imageUrl: String,
         val artist: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 
     data class RecentPlay(
         val imageUrl: String,
         val title: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 
     data class ListenableShow(
         val imageUrl: String,
         val genre: String,
         val title: String,
         val artist: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 
     data class PopularRadio(
         val imageUrl: String,
         val artists: String
-    ): HomeMainModel()
+    ) : HomeMainModel()
 }

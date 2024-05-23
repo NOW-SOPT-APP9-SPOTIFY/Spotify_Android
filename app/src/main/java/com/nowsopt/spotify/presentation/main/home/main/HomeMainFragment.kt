@@ -22,45 +22,66 @@ class HomeMainFragment : BindingFragment<FragmentHomeMainBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         val recommendMixAdapter = HomeMainAdapter()
-        recommendMixAdapter.setItems(HomeMainAdapter.TYPE_RECOMMEND_MIX, homeMainViewModel.recommendMix)
+        recommendMixAdapter.setItems(
+            HomeMainAdapter.TYPE_RECOMMEND_MIX,
+            homeMainViewModel.recommendMix
+        )
         binding.rvHomeMainRecommendMix.run {
             adapter = recommendMixAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
         val todayHitSongAdapter = HomeMainAdapter()
-        todayHitSongAdapter.setItems(HomeMainAdapter.TYPE_TODAY_HIT_SONG, homeMainViewModel.todayHitSong)
+        todayHitSongAdapter.setItems(
+            HomeMainAdapter.TYPE_TODAY_HIT_SONG,
+            homeMainViewModel.todayHitSong
+        )
         binding.rvHomeMainTodayHitSong.run {
             adapter = todayHitSongAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
         val popularArtistAdapter = HomeMainAdapter()
-        popularArtistAdapter.setItems(HomeMainAdapter.TYPE_POPULAR_ARTIST, homeMainViewModel.popularArtist)
+        popularArtistAdapter.setItems(
+            HomeMainAdapter.TYPE_POPULAR_ARTIST,
+            homeMainViewModel.popularArtist
+        )
         binding.rvHomeMainPopularArtist.run {
             adapter = popularArtistAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
         val recentPlayAdapter = HomeMainAdapter()
         recentPlayAdapter.setItems(HomeMainAdapter.TYPE_RECENT_PLAY, homeMainViewModel.recentPlay)
         binding.rvHomeMainRecentPlay.run {
             adapter = recentPlayAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
         val listenableShowAdapter = HomeMainAdapter()
-        listenableShowAdapter.setItems(HomeMainAdapter.TYPE_LISTENABLE_SHOW, homeMainViewModel.listenableShow)
+        listenableShowAdapter.setItems(
+            HomeMainAdapter.TYPE_LISTENABLE_SHOW,
+            homeMainViewModel.listenableShow
+        )
         binding.rvHomeMainListenableShow.run {
             adapter = listenableShowAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
 
         val popularRadioAdapter = HomeMainAdapter()
-        popularRadioAdapter.setItems(HomeMainAdapter.TYPE_POPULAR_RADIO, homeMainViewModel.popularRadio)
+        popularRadioAdapter.setItems(
+            HomeMainAdapter.TYPE_POPULAR_RADIO,
+            homeMainViewModel.popularRadio
+        )
         binding.rvHomeMainPopularRadio.run {
             adapter = popularRadioAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
     }
 }

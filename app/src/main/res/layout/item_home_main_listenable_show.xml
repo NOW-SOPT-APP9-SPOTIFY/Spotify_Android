@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:paddingEnd="16dp">
 
     <!--들어볼만한 Show-->
@@ -25,22 +24,22 @@
             android:id="@+id/tv_home_main_listenable_show_genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextAppearance.Spotify.Body.Small_kr"
+            android:text="사회 및 문화"
             android:textColor="@color/green"
-            tools:text="사회 및 문화" />
+            android:theme="@style/TextAppearance.Spotify.Body.Small_kr" />
 
         <TextView
             android:id="@+id/tv_home_main_listenable_show_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextAppearance.Spotify.Body.regular_en_bold"
-            tools:text="Podcast Malam Kliwon" />
+            android:text="Podcast Malam Kliwon"
+            android:theme="@style/TextAppearance.Spotify.Body.regular_en_bold" />
 
         <TextView
             android:id="@+id/tv_home_main_listenable_show_artist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
-            tools:text="프로그램 · Podkesmas Asia" />
+            android:text="프로그램 · Podkesmas Asia"
+            android:theme="@style/TextAppearance.Spotify.Body.Medium_kr" />
     </LinearLayout>
 </LinearLayout>

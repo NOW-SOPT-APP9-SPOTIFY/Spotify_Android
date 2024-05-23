@@ -2,7 +2,7 @@ package com.nowsopt.spotify.presentation.main.home.main
 
 import androidx.lifecycle.ViewModel
 
-class HomeMainViewModel: ViewModel() {
+class HomeMainViewModel : ViewModel() {
 
     val recommendMix = listOf(
         HomeMainModel.RecommendMix(
