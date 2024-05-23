@@ -92,15 +92,15 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         submitData(ArtistDataType.INCLUDED, artistViewModel.includedMusicData)
     }
 
-    private fun initAdapter(): ArtistAdapter  = ArtistAdapter(requireContext())
+    private fun initAdapter(): ArtistAdapter = ArtistAdapter(requireContext())
 
     private fun submitData(dataType: ArtistDataType, data: List<ArtistModel>) {
-        when(dataType) {
+        when (dataType) {
             ArtistDataType.INCLUDED -> includedMusicAdapter.submitList(data)
             ArtistDataType.OTHER -> otherMusicAdapter.submitList(data)
             ArtistDataType.PLAYLIST -> playlistAdapter.submitList(data)
             ArtistDataType.GENRE -> artistGenreAdapter.submitList(data)
-            else -> popularAlbumAdapter.submitList(data)
+            ArtistDataType.ALBUM -> popularAlbumAdapter.submitList(data)
         }
     }
 

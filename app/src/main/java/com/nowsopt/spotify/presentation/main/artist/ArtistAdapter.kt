@@ -35,10 +35,38 @@ class ArtistAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return when (viewType) {
-            ArtistDataType.ALBUM.ordinal -> PopularAlbumViewHolder(ItemPopularAlbumBinding.inflate(inflater, parent, false))
-            ArtistDataType.GENRE.ordinal -> ArtistGenreViewHolder(ItemArtistGenreBinding.inflate(inflater, parent, false))
-            ArtistDataType.INCLUDED.ordinal-> IncludedMusicViewHolder(ItemIncludedMusicBinding.inflate(inflater, parent, false))
-            ArtistDataType.OTHER.ordinal -> OtherMusicViewHolder(ItemOtherMusicBinding.inflate(inflater, parent, false))
+            ArtistDataType.ALBUM.ordinal -> PopularAlbumViewHolder(
+                ItemPopularAlbumBinding.inflate(
+                    inflater,
+                    parent,
+                    false
+                )
+            )
+
+            ArtistDataType.GENRE.ordinal -> ArtistGenreViewHolder(
+                ItemArtistGenreBinding.inflate(
+                    inflater,
+                    parent,
+                    false
+                )
+            )
+
+            ArtistDataType.INCLUDED.ordinal -> IncludedMusicViewHolder(
+                ItemIncludedMusicBinding.inflate(
+                    inflater,
+                    parent,
+                    false
+                )
+            )
+
+            ArtistDataType.OTHER.ordinal -> OtherMusicViewHolder(
+                ItemOtherMusicBinding.inflate(
+                    inflater,
+                    parent,
+                    false
+                )
+            )
+
             else -> PlaylistViewHolder(ItemArtistPlaylistBinding.inflate(inflater, parent, false))
         }
     }
@@ -46,7 +74,7 @@ class ArtistAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
 
-        when(getItemViewType(position)) {
+        when (getItemViewType(position)) {
             ArtistDataType.ALBUM.ordinal -> (holder as PopularAlbumViewHolder).onBind(item as MockPopularAlbumModel)
             ArtistDataType.GENRE.ordinal -> (holder as ArtistGenreViewHolder).onBind(item as MockArtistGenreModel)
             ArtistDataType.INCLUDED.ordinal -> (holder as IncludedMusicViewHolder).onBind(item as MockIncludedMusic)
@@ -56,7 +84,7 @@ class ArtistAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(getItem(position)) {
+        return when (getItem(position)) {
             is MockPopularAlbumModel -> ArtistDataType.ALBUM.ordinal
             is MockArtistGenreModel -> ArtistDataType.GENRE.ordinal
             is MockIncludedMusic -> ArtistDataType.INCLUDED.ordinal
