@@ -7,19 +7,23 @@ import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.animation.doOnEnd
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.R
 
-class FullScreenDialogFragment : DialogFragment() {
+class FullScreenDialogFragment(
+    val albumId: Int,
+    val artistName: String,
+    val albumName: String,
+) : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,6 +59,18 @@ class FullScreenDialogFragment : DialogFragment() {
             dismiss()
             findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
         }
+
+        val image = when (albumId) {
+            1 -> R.drawable.img_bruno
+
+            6 -> R.drawable.img_the_script
+
+            else -> R.drawable.img_xxanteria
+        }
+
+        view.findViewById<ImageView>(R.id.iv_dialog_music_album_mini).setImageResource(image)
+        view.findViewById<TextView>(R.id.tv_dialog_music_title_mini).text = albumName
+        view.findViewById<TextView>(R.id.tv_dialog_music_album_mini).text = "앨범 · $artistName"
     }
 
     override fun onResume() {
@@ -100,8 +116,16 @@ class FullScreenDialogFragment : DialogFragment() {
     }
 
     companion object {
-        fun newInstance(): FullScreenDialogFragment {
-            return FullScreenDialogFragment()
+        fun newInstance(
+            albumId: Int,
+            artistName: String,
+            albumName: String,
+        ): FullScreenDialogFragment {
+            return FullScreenDialogFragment(
+                albumId = albumId,
+                artistName = artistName,
+                albumName = albumName
+            )
         }
     }
 }

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
 
 
     <ImageView
-        android:id="@+id/iv_home_preference_music_album_mini"
+        android:id="@+id/iv_dialog_music_album_mini"
         android:layout_width="51dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
         android:contentDescription="@null"
         android:src="@drawable/img_bruno"
-        app:layout_constraintBottom_toBottomOf="@id/tv_home_preference_music_album_mini"
+        app:layout_constraintBottom_toBottomOf="@id/tv_dialog_music_album_mini"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_home_preference_music_title_mini" />
+        app:layout_constraintTop_toTopOf="@id/tv_dialog_music_title_mini" />
 
     <TextView
-        android:id="@+id/tv_home_preference_music_title_mini"
-        tools:text="Doo-Wops &amp; Hooligans"
+        android:id="@+id/tv_dialog_music_title_mini"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="72dp"
-        android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
-        app:layout_constraintStart_toEndOf="@id/iv_home_preference_music_album_mini"
-        app:layout_constraintBottom_toTopOf="@id/tv_home_preference_music_album_mini" />
+        android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_music_album_mini"
+        app:layout_constraintStart_toEndOf="@id/iv_dialog_music_album_mini"
+        tools:text="Doo-Wops &amp; Hooligans" />
 
     <TextView
-        android:id="@+id/tv_home_preference_music_album_mini"
-        tools:text="앨범 · Bruno Mars"
+        android:id="@+id/tv_dialog_music_album_mini"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_kr2"
-        app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title_mini"
         app:layout_constraintBottom_toTopOf="@id/tv_dialog_library"
-        android:layout_marginBottom="36dp"/>
+        app:layout_constraintStart_toStartOf="@id/tv_dialog_music_title_mini"
+        tools:text="앨범 · Bruno Mars" />
 
     <TextView
         android:id="@+id/tv_dialog_library"
@@ -119,9 +119,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:clickable="true"
         android:gravity="center"
         android:paddingVertical="16dp"
-        android:clickable="true"
         android:text="닫기"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
         app:layout_constraintBottom_toBottomOf="parent"

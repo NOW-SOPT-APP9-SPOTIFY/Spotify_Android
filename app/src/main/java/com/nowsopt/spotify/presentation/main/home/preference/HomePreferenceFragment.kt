@@ -43,14 +43,12 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
 
     private fun initBinds() {
         homePreferenceMusicAdapter =
-            HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
-                // 클릭시 화면 이동 로직 구현 -> 블러 화면
-                // findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
-//                val rootView: View? = activity?.window?.decorView?.rootView
-//                val blurEffect = RenderEffect.createBlurEffect(90f, 90f, Shader.TileMode.REPEAT)
-//                rootView?.setRenderEffect(blurEffect)
-
-                val dialogFragment = FullScreenDialogFragment.newInstance()
+            HomePreferenceMusicAdapter(requireContext()) { album ->
+                val dialogFragment = FullScreenDialogFragment.newInstance(
+                    album.id,
+                    album.artist.artistName,
+                    album.albumName
+                )
                 dialogFragment.show(parentFragmentManager, "FullScreenDialog")
             }
 
