@@ -1,4 +1,4 @@
-package com.nowsopt.spotify.presentation.main.artist
+package com.nowsopt.spotify.presentation.main.artist.model
 
 sealed class ArtistModel {
     data class MockPopularAlbumModel(

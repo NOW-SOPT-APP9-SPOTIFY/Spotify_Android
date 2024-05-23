@@ -9,6 +9,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.databinding.FragmentChartTopperBinding
+import com.nowsopt.spotify.presentation.main.artist.model.Song
 import com.nowsopt.spotify.util.base.BindingFragment
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -46,7 +47,7 @@ class ChartTopperFragment : BindingFragment<FragmentChartTopperBinding>() {
         binding.rvChartTopper.adapter = chartTopperAdapter
     }
 
-    private fun submitChartTopperList(data: List<Songs.Song>) = chartTopperAdapter.submitList(data)
+    private fun submitChartTopperList(data: List<Song>) = chartTopperAdapter.submitList(data)
 
     private fun backButtonClickListener() {
         binding.btnBack.setOnClickListener {
