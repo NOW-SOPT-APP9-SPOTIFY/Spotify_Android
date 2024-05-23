@@ -44,7 +44,7 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
         homePreferenceMusicAdapter =
             HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
                 // 클릭시 화면 이동 로직 구현 -> 블러 화면
-                findNavController().navigate(R.id.action_home_navigation_to_musicDetailFragment)
+                findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
             }
 
         with(binding) {
