@@ -1,5 +1,6 @@
 package com.nowsopt.spotify.presentation.main.home.main
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.nowsopt.spotify.databinding.ItemHomeMainListenableShowBinding
 import com.nowsopt.spotify.databinding.ItemHomeMainPopularArtistBinding
