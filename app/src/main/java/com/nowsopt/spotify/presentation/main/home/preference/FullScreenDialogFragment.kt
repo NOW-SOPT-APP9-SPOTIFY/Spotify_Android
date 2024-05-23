@@ -12,12 +12,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.animation.doOnEnd
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.R
+import com.nowsopt.spotify.databinding.DialogLayoutBinding
 
 class FullScreenDialogFragment(
     val albumId: Int,
@@ -25,22 +24,26 @@ class FullScreenDialogFragment(
     val albumName: String,
 ) : DialogFragment() {
 
+    private var _binding: DialogLayoutBinding? = null
+    private val binding
+        get() = requireNotNull(_binding) { "ERRORRRRR" }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.dialog_layout, container, false)
-            .apply {
-                val window = dialog?.window
-                window?.setLayout(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-                )
-                window?.setGravity(Gravity.CENTER or Gravity.BOTTOM)
-                window?.attributes?.windowAnimations = R.style.DialogAnimation
-                window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            }
+        _binding = DialogLayoutBinding.inflate(inflater, container, false)
+        return binding.root.apply {
+            val window = dialog?.window
+            window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            window?.setGravity(Gravity.CENTER or Gravity.BOTTOM)
+            window?.attributes?.windowAnimations = R.style.DialogAnimation
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,26 +54,24 @@ class FullScreenDialogFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.btn_dialog_close).setOnClickListener {
+        binding.btnDialogClose.setOnClickListener {
             dismiss()
         }
 
-        view.findViewById<TextView>(R.id.tv_dialog_artist).setOnClickListener {
+        binding.tvDialogArtist.setOnClickListener {
             dismiss()
             findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
         }
 
         val image = when (albumId) {
             1 -> R.drawable.img_bruno
-
             6 -> R.drawable.img_the_script
-
             else -> R.drawable.img_xxanteria
         }
 
-        view.findViewById<ImageView>(R.id.iv_dialog_music_album_mini).setImageResource(image)
-        view.findViewById<TextView>(R.id.tv_dialog_music_title_mini).text = albumName
-        view.findViewById<TextView>(R.id.tv_dialog_music_album_mini).text = "앨범 · $artistName"
+        binding.ivDialogMusicAlbumMini.setImageResource(image)
+        binding.tvDialogMusicTitleMini.text = albumName
+        binding.tvDialogMusicAlbumMini.text = "앨범 · $artistName"
     }
 
     override fun onResume() {
@@ -90,7 +91,6 @@ class FullScreenDialogFragment(
             rootView.setRenderEffect(blurEffect)
         }
     }
-
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
@@ -113,6 +113,11 @@ class FullScreenDialogFragment(
             }
             blurAnimator.start()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
