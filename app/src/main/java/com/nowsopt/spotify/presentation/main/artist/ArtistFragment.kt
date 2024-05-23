@@ -10,12 +10,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentArtistBinding
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.ALBUM
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.GENRE
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.INCLUDED
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.OTHER
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.PLAYLIST
-import com.nowsopt.spotify.presentation.main.artist.ArtistDataType.Companion.POPULAR_MUSIC
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
 import com.nowsopt.spotify.util.base.BindingFragment
 import kotlinx.coroutines.flow.launchIn
@@ -61,7 +55,7 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
     private fun observeArtistDetail() {
         artistViewModel.detail.flowWithLifecycle(lifecycle).onEach { data ->
             data?.artistName?.let { showArtistDetail(it) }
-            artistDetailAdapter.submitList(data?.songs)
+            artistDetailAdapter.submitList(data?.songs?.take(5))
         }.launchIn(lifecycleScope)
     }
 
@@ -75,37 +69,37 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
 
     private fun initPopularAlbumBinds() {
         popularAlbumAdapter = initAdapter()
-        submitData(ALBUM, artistViewModel.popularAlbumData)
+        submitData(ArtistDataType.ALBUM, artistViewModel.popularAlbumData)
     }
 
     private fun initArtistGenreBinds() {
         artistGenreAdapter = initAdapter()
-        submitData(GENRE, artistViewModel.genreData)
+        submitData(ArtistDataType.GENRE, artistViewModel.genreData)
     }
 
     private fun initPlaylistBinds() {
         playlistAdapter = initAdapter()
-        submitData(PLAYLIST, artistViewModel.playlistData)
+        submitData(ArtistDataType.PLAYLIST, artistViewModel.playlistData)
     }
 
     private fun initOtherMusicBinds() {
         otherMusicAdapter = initAdapter()
-        submitData(OTHER, artistViewModel.otherMusicData)
+        submitData(ArtistDataType.OTHER, artistViewModel.otherMusicData)
     }
 
     private fun initIncludedMusicBinds() {
         includedMusicAdapter = initAdapter()
-        submitData(INCLUDED, artistViewModel.includedMusicData)
+        submitData(ArtistDataType.INCLUDED, artistViewModel.includedMusicData)
     }
 
     private fun initAdapter(): ArtistAdapter  = ArtistAdapter(requireContext())
 
-    private fun submitData(dataType: Int, data: List<ArtistModel>) {
+    private fun submitData(dataType: ArtistDataType, data: List<ArtistModel>) {
         when(dataType) {
-            INCLUDED -> includedMusicAdapter.submitList(data)
-            OTHER -> otherMusicAdapter.submitList(data)
-            PLAYLIST -> playlistAdapter.submitList(data)
-            GENRE -> artistGenreAdapter.submitList(data)
+            ArtistDataType.INCLUDED -> includedMusicAdapter.submitList(data)
+            ArtistDataType.OTHER -> otherMusicAdapter.submitList(data)
+            ArtistDataType.PLAYLIST -> playlistAdapter.submitList(data)
+            ArtistDataType.GENRE -> artistGenreAdapter.submitList(data)
             else -> popularAlbumAdapter.submitList(data)
         }
     }
