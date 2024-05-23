@@ -1,5 +1,7 @@
 package com.nowsopt.spotify.presentation.main.home.preference
 
+import android.graphics.RenderEffect
+import android.graphics.Shader
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
@@ -44,6 +46,10 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
             HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
                 // 클릭시 화면 이동 로직 구현 -> 블러 화면
                 // findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
+//                val rootView: View? = activity?.window?.decorView?.rootView
+//                val blurEffect = RenderEffect.createBlurEffect(90f, 90f, Shader.TileMode.REPEAT)
+//                rootView?.setRenderEffect(blurEffect)
+
                 val dialogFragment = FullScreenDialogFragment.newInstance()
                 dialogFragment.show(parentFragmentManager, "FullScreenDialog")
             }

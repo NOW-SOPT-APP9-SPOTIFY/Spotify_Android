@@ -2,14 +2,127 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 다이얼로그 내용 -->
+
+    <ImageView
+        android:id="@+id/iv_home_preference_music_album_mini"
+        android:layout_width="51dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:contentDescription="@null"
+        android:src="@drawable/img_bruno"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_preference_music_album_mini"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home_preference_music_title_mini" />
+
     <TextView
+        android:id="@+id/tv_home_preference_music_title_mini"
+        tools:text="Doo-Wops &amp; Hooligans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="전체 화면 다이얼로그"
-        android:textSize="24sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="72dp"
+        android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
+        app:layout_constraintStart_toEndOf="@id/iv_home_preference_music_album_mini"
+        app:layout_constraintBottom_toTopOf="@id/tv_home_preference_music_album_mini" />
+
+    <TextView
+        android:id="@+id/tv_home_preference_music_album_mini"
+        tools:text="앨범 · Bruno Mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr2"
+        app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title_mini"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_library"
+        android:layout_marginBottom="36dp"/>
+
+    <TextView
+        android:id="@+id/tv_dialog_library"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="12dp"
+        android:padding="10dp"
+        android:text="내 라이브러리에 추가하기"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+        app:drawableStartCompat="@drawable/ic_add_gray_24"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_interest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialog_interest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="12dp"
+        android:padding="10dp"
+        android:text="관심 없음"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+        app:drawableStartCompat="@drawable/ic_thumb_down_gray_24"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_artist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialog_artist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="12dp"
+        android:padding="10dp"
+        android:text="아티스트 보기"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+        app:drawableStartCompat="@drawable/ic_artist_gray_24"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_radio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialog_radio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        android:drawablePadding="12dp"
+        android:padding="10dp"
+        android:text="라디오 보러가기"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+        app:drawableStartCompat="@drawable/ic_radio_gray_24"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialog_share"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="36dp"
+        android:drawablePadding="12dp"
+        android:padding="10dp"
+        android:text="공유"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+        app:drawableStartCompat="@drawable/ic_share_gray_24"
+        app:layout_constraintBottom_toTopOf="@id/btn_dialog_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_dialog_close"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:text="닫기"
+        android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
