@@ -21,9 +21,19 @@ data class Playlists (
     ) {
         fun toRecommendMix(): HomeMainModel.RecommendMix {
             return HomeMainModel.RecommendMix(
-                imageUrl = R.drawable.img_recommend_mix_1,
+                imageUrl = getImageUrl(this.id),
                 theme = this.playlistName,
                 artists = this.artists)
+        }
+
+        private fun getImageUrl(id: Int): Int {
+            return when(id) {
+                1 -> R.drawable.img_recommend_mix_1
+                2 -> R.drawable.img_recommend_mix_2
+                3 -> R.drawable.img_recommend_mix_3
+                4 -> R.drawable.img_recommend_mix_4
+                else -> R.drawable.img_recommend_mix_1
+            }
         }
     }
 }

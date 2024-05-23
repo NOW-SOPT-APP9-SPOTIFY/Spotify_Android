@@ -21,9 +21,22 @@ data class HitSongs (
     ) {
         fun toTodayHitSong(): HomeMainModel.TodayHitSong {
             return HomeMainModel.TodayHitSong(
-                imageUrl = R.drawable.img_today_hit_song_1,
+                imageUrl = getImageUrl(this.id),
                 title= this.title,
                 artist=this.artist)
+        }
+
+        private fun getImageUrl(id: Int): Int {
+            return when(id) {
+                1,3 -> R.drawable.img_today_hit_song_1
+                2,5,7,9,25 -> R.drawable.img_today_hit_song_2
+                4,8 -> R.drawable.img_today_hit_song_4
+                34 -> R.drawable.img_today_hit_song_34
+                35 -> R.drawable.img_today_hit_song_35
+                36 -> R.drawable.img_today_hit_song_36
+                6 -> R.drawable.img_today_hit_song_6
+                else -> R.drawable.img_today_hit_song_1
+            }
         }
     }
 }

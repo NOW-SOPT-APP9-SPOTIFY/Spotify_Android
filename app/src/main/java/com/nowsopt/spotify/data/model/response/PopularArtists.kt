@@ -19,9 +19,21 @@ data class PopularArtists(
     ) {
         fun toPopularArtist(): HomeMainModel.PopularArtist {
             return HomeMainModel.PopularArtist(
-                imageUrl = R.drawable.img_popular_artist_3,
+                imageUrl = getImageUrl(this.id),
                 artist = this.artistName
             )
+        }
+
+        private fun getImageUrl(id: Int): Int {
+            return when(id) {
+                2 -> R.drawable.img_popular_artist_2
+                3 -> R.drawable.img_popular_artist_3
+                6 -> R.drawable.img_popular_artist_6
+                7 -> R.drawable.img_popular_artist_7
+                12 -> R.drawable.img_popular_artist_12
+                13 -> R.drawable.img_popular_artist_13
+                else -> R.drawable.img_popular_artist_12
+            }
         }
     }
 }
