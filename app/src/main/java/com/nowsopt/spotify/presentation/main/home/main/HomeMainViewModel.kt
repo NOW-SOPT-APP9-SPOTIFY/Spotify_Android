@@ -1,73 +1,63 @@
 package com.nowsopt.spotify.presentation.main.home.main
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.nowsopt.spotify.data.ServicePool
+import com.nowsopt.spotify.data.model.response.Albums
+import com.nowsopt.spotify.data.model.response.HitSongs
+import com.nowsopt.spotify.data.model.response.Playlists
+import com.nowsopt.spotify.data.model.response.PopularArtists
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class HomeMainViewModel : ViewModel() {
 
-    val recommendMix = listOf(
-        HomeMainModel.RecommendMix(
-            imageUrl = "imageUrl",
-            theme = "Theme1",
-            artists = "artist1"
-        ),
-        HomeMainModel.RecommendMix(
-            imageUrl = "imageUrl",
-            theme = "Theme2",
-            artists = "artist2"
-        ),
-        HomeMainModel.RecommendMix(
-            imageUrl = "imageUrl",
-            theme = "Theme3",
-            artists = "artist3"
-        ),
-        HomeMainModel.RecommendMix(
-            imageUrl = "imageUrl",
-            theme = "Theme4",
-            artists = "artist4"
-        ),
-    )
+    private val _recommendMix = MutableStateFlow<List<Playlists.Playlist>>(emptyList())
+    val recommendMix: StateFlow<List<Playlists.Playlist>> get() = _recommendMix
 
-    val todayHitSong = listOf(
-        HomeMainModel.TodayHitSong(
-            imageUrl = "imageUrl",
-            title = "title1",
-            artist = "artist1"
-        ),
-        HomeMainModel.TodayHitSong(
-            imageUrl = "imageUrl",
-            title = "title2",
-            artist = "artist2"
-        ),
-        HomeMainModel.TodayHitSong(
-            imageUrl = "imageUrl",
-            title = "title3",
-            artist = "artist3"
-        ),
-        HomeMainModel.TodayHitSong(
-            imageUrl = "imageUrl",
-            title = "title4",
-            artist = "artist4"
-        ),
-    )
+    private val _hitSong = MutableStateFlow<List<HitSongs.HitSong>>(emptyList())
+    val hitSong: StateFlow<List<HitSongs.HitSong>> get() = _hitSong
 
-    val popularArtist = listOf(
-        HomeMainModel.PopularArtist(
-            imageUrl = "imageUrl",
-            artist = "artist1"
-        ),
-        HomeMainModel.PopularArtist(
-            imageUrl = "imageUrl",
-            artist = "artist2"
-        ),
-        HomeMainModel.PopularArtist(
-            imageUrl = "imageUrl",
-            artist = "artist3"
-        ),
-        HomeMainModel.PopularArtist(
-            imageUrl = "imageUrl",
-            artist = "artist4"
-        ),
-    )
+    private val _popularArtists = MutableStateFlow<List<PopularArtists.PopularArtist>>(emptyList())
+    val popularArtist: StateFlow<List<PopularArtists.PopularArtist>> get() = _popularArtists
+
+    fun getPlaylists() {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                ServicePool.homeMainService.getRecommendMix()
+            }.onSuccess { playlists ->
+                _recommendMix.value = playlists.data.playlists
+            }.onFailure {
+                it.printStackTrace()
+            }
+        }
+    }
+
+    fun getHitSongs() {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                ServicePool.homeMainService.getTodayHitSong()
+            }.onSuccess { hitSongs ->
+                _hitSong.value = hitSongs.data.hitSongs
+            }.onFailure {
+                it.printStackTrace()
+            }
+        }
+    }
+
+    fun getPopularArtists() {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                ServicePool.homeMainService.getPopularArtists()
+            }.onSuccess { popularArtists ->
+                _popularArtists.value = popularArtists.data.popularArtists
+            }.onFailure {
+                it.printStackTrace()
+            }
+        }
+    }
 
     val recentPlay = listOf(
         HomeMainModel.RecentPlay(
