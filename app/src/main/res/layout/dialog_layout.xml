@@ -121,6 +121,7 @@
         android:layout_marginHorizontal="16dp"
         android:gravity="center"
         android:paddingVertical="16dp"
+        android:clickable="true"
         android:text="닫기"
         android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
         app:layout_constraintBottom_toBottomOf="parent"

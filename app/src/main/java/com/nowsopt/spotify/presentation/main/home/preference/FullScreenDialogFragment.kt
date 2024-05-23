@@ -13,8 +13,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.core.animation.doOnEnd
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import com.nowsopt.spotify.R
 
 class FullScreenDialogFragment : DialogFragment() {
@@ -24,7 +26,7 @@ class FullScreenDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(com.nowsopt.spotify.R.layout.dialog_layout, container, false)
+        return inflater.inflate(R.layout.dialog_layout, container, false)
             .apply {
                 val window = dialog?.window
                 window?.setLayout(
@@ -40,6 +42,19 @@ class FullScreenDialogFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, R.style.CustomDialogTheme)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<TextView>(R.id.btn_dialog_close).setOnClickListener {
+            dismiss()
+        }
+
+        view.findViewById<TextView>(R.id.tv_dialog_artist).setOnClickListener {
+            dismiss()
+            findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
+        }
     }
 
     override fun onResume() {
@@ -63,26 +78,25 @@ class FullScreenDialogFragment : DialogFragment() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        // Remove blur effect when dialog is dismissed
-        // activity?.window?.decorView?.rootView?.setRenderEffect(null)
 
         activity?.window?.decorView?.rootView?.let { rootView ->
             val blurAnimator = ObjectAnimator.ofFloat(90f, 0.01f).apply {
-                duration = 500 // 애니메이션 지속 시간 (밀리초 단위)
+                duration = 500
                 addUpdateListener { animation ->
                     val animatedValue = animation.animatedValue as Float
-                    Log.e("TAG", "onDismiss: $animatedValue", )
-                    val blurEffect = RenderEffect.createBlurEffect(animatedValue, animatedValue, Shader.TileMode.REPEAT)
+                    val blurEffect = RenderEffect.createBlurEffect(
+                        animatedValue,
+                        animatedValue,
+                        Shader.TileMode.REPEAT
+                    )
                     rootView.setRenderEffect(blurEffect)
                 }
                 doOnEnd {
-                    // Remove blur effect when animation ends
                     rootView.setRenderEffect(null)
                 }
             }
             blurAnimator.start()
         }
-
     }
 
     companion object {
