@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
@@ -44,7 +43,9 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
         homePreferenceMusicAdapter =
             HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
                 // 클릭시 화면 이동 로직 구현 -> 블러 화면
-                findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
+                // findNavController().navigate(R.id.action_home_navigation_to_artist_fragment)
+                val dialogFragment = FullScreenDialogFragment.newInstance()
+                dialogFragment.show(parentFragmentManager, "FullScreenDialog")
             }
 
         with(binding) {
