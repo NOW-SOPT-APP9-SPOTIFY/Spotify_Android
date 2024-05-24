@@ -1,6 +1,9 @@
-# Spotify_Android
+# 🎶 Spotify_Android
+> NOW SOPT 34th 합동 세미나 앱 4조 Android팀 <br>
+24.05.11 - 24.05.24
+<br>
 
-## Who We Are?
+## 😎 Who We Are?
 | 박동민<br/>([@chattymin](https://github.com/chattymin)) | 손민재<br/>([@SYAAINN](https://github.com/SYAAINN)) | 유정현<br/>([@OliviaYJH](https://github.com/OliviaYJH)) |
 | :---: | :---: | :---: |
 | <img width="540" src="https://avatars.githubusercontent.com/u/52882799?v=4"/> | <img width="540" src="https://avatars.githubusercontent.com/u/137160756?v=4"/> | <img width="540" src="https://avatars.githubusercontent.com/u/81751105?v=4"/> |
