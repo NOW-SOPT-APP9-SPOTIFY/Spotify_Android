@@ -1,6 +1,7 @@
 package com.nowsopt.spotify.presentation.main.home.main
 
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.nowsopt.spotify.databinding.ItemHomeMainListenableShowBinding
 import com.nowsopt.spotify.databinding.ItemHomeMainPopularArtistBinding
 import com.nowsopt.spotify.databinding.ItemHomeMainPopularRadioBinding
@@ -15,8 +16,9 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(recommendMix: HomeMainModel.RecommendMix) {
             with(binding) {
+                ivHomeMainRecommendMixAlbum.load(recommendMix.imageUrl) // R.drawable 형태
                 tvHomeMainRecommendMixTheme.text = recommendMix.theme
-                tvHomeMainRecommendMixArtist.text = recommendMix.artists
+                tvHomeMainRecommendMixArtist.text = recommendMix.artists.joinToString(separator = ", ")
             }
         }
     }
@@ -26,6 +28,7 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(todayHitSong: HomeMainModel.TodayHitSong) {
             with(binding) {
+                ivHomeMainTodayHitSongAlbum.load(todayHitSong.imageUrl)
                 tvHomeMainTodayHitSongTitle.text = todayHitSong.title
                 tvHomeMainTodayHitSongArtist.text = todayHitSong.artist
             }
@@ -37,6 +40,7 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(popularArtist: HomeMainModel.PopularArtist) {
             with(binding) {
+                ivHomeMainPopularArtistAlbum.load(popularArtist.imageUrl)
                 tvHomeMainPopularArtistArtist.text = popularArtist.artist
             }
         }
@@ -47,6 +51,7 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(recentPlay: HomeMainModel.RecentPlay) {
             with(binding) {
+                ivHomeMainRecentPlayAlbum.load(recentPlay.imageUrl)
                 tvHomeMainRecentPlayTitle.text = recentPlay.title
             }
         }
@@ -57,6 +62,7 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(listenableShow: HomeMainModel.ListenableShow) {
             with(binding) {
+                ivHomeMainListenableShowAlbum.load(listenableShow.imageUrl)
                 tvHomeMainListenableShowGenre.text = listenableShow.genre
                 tvHomeMainListenableShowTitle.text = listenableShow.title
                 tvHomeMainListenableShowArtist.text = listenableShow.artist
@@ -69,6 +75,7 @@ class HomeMainViewHolder {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(popularRadio: HomeMainModel.PopularRadio) {
             with(binding) {
+                ivHomeMainPopularRadioAlbum.load(popularRadio.imageUrl)
                 tvHomeMainPopularRadioArtist.text = popularRadio.artists
             }
         }

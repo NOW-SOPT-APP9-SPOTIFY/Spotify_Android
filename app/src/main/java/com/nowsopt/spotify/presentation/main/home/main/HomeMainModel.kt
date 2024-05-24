@@ -1,37 +1,39 @@
 package com.nowsopt.spotify.presentation.main.home.main
 
+import androidx.annotation.DrawableRes
+
 sealed class HomeMainModel {
     data class RecommendMix(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val theme: String,
-        val artists: String
+        val artists: List<String>
     ) : HomeMainModel()
 
     data class TodayHitSong(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val title: String,
         val artist: String
     ) : HomeMainModel()
 
     data class PopularArtist(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val artist: String
     ) : HomeMainModel()
 
     data class RecentPlay(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val title: String
     ) : HomeMainModel()
 
     data class ListenableShow(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val genre: String,
         val title: String,
         val artist: String
     ) : HomeMainModel()
 
     data class PopularRadio(
-        val imageUrl: String,
+        @DrawableRes val imageUrl: Int,
         val artists: String
     ) : HomeMainModel()
 }
