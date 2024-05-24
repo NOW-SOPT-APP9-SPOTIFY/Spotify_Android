@@ -1,6 +1,7 @@
 package com.nowsopt.spotify.presentation.main.artist.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.nowsopt.spotify.databinding.ItemIncludedMusicBinding
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockIncludedMusic
 
@@ -12,6 +13,7 @@ class IncludedMusicViewHolder(
         with(binding) {
             tvIncludedTitle.text = mockIncludedMusic.title
             tvIncludedRelease.text = mockIncludedMusic.release.toString()
+            ivIncludedMusic.load(mockIncludedMusic.imageUrl)
         }
     }
 }

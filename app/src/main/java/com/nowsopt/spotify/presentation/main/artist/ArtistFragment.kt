@@ -8,6 +8,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
 import com.nowsopt.spotify.databinding.FragmentArtistBinding
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
@@ -35,6 +37,8 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initBinds()
+        getArtistRecommend()
+        getArtistDetailDescription()
         getArtistDetail()
         observeArtistDetail()
         chartTopperArrowButtonClickListener()
@@ -48,6 +52,26 @@ class ArtistFragment : BindingFragment<FragmentArtistBinding>() {
         initOtherMusicBinds()
         initIncludedMusicBinds()
         connectAdapter()
+    }
+
+    private fun getArtistRecommend() {
+        with(binding) {
+            ivSharedProfile.load(R.drawable.img_shared_profile) {
+                transformations(CircleCropTransformation())
+            }
+            tvSharedName.text = "Bruno Mars"
+            tvSharedAlbumName.text = "Bruno Mars - An Evening With Sil ..."
+            tvSharedPlaylist.text = "플레이리스트"
+        }
+    }
+
+    private fun getArtistDetailDescription() {
+        with(binding) {
+            tvMonthlyListener.text = "69,691,993 월별 리스너"
+            tvArtistDescription.text = "11x time GRAMMY Award winer Bruno Mars" +
+                    "is one of the best-selling artists of all time." +
+                    "DOO-WOPS & HOOLIGANS marked the lan..."
+        }
     }
 
     private fun getArtistDetail() = artistViewModel.getArtistDetail(1)

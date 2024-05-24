@@ -1,6 +1,7 @@
 package com.nowsopt.spotify.presentation.main.artist.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.nowsopt.spotify.databinding.ItemArtistGenreBinding
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel.MockArtistGenreModel
 
@@ -12,6 +13,7 @@ class ArtistGenreViewHolder(
         with(binding) {
             tvGenreTitle.text = mockArtistGenreModel.title
             tvGenreDescription.text = mockArtistGenreModel.description
+            ivGenre.load(mockArtistGenreModel.imageUrl)
         }
     }
 }

@@ -21,4 +21,6 @@
     <string name="popular_album_release">%1$s · 앨범</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="identified_artist">확인된 아티스트</string>
+    <string name="shared_profile">공유한 사람 :</string>
 </resources>
