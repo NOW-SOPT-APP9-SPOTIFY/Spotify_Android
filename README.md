@@ -3,10 +3,21 @@
 24.05.11 - 24.05.24
 <br>
 
+## 🎥 Action Video
+[view1.webm](https://github.com/NOW-SOPT-APP9-SPOTIFY/Spotify_Android/assets/52882799/9c13533d-e610-41e0-8bac-c864f9fccdc7)
+
+
+[view2.webm](https://github.com/NOW-SOPT-APP9-SPOTIFY/Spotify_Android/assets/52882799/1c9e0f45-fdff-4de6-bb94-c785f54d8523)
+
+[view3.webm](https://github.com/NOW-SOPT-APP9-SPOTIFY/Spotify_Android/assets/52882799/facdc2c9-6dd0-4b58-b4f9-8762bff2966d)
+
+[view4.webm](https://github.com/NOW-SOPT-APP9-SPOTIFY/Spotify_Android/assets/52882799/2ed958f2-fba6-4bcf-8edf-f1934b145b55)
+
 ## 😎 Who We Are?
 | 박동민<br/>([@chattymin](https://github.com/chattymin)) | 손민재<br/>([@SYAAINN](https://github.com/SYAAINN)) | 유정현<br/>([@OliviaYJH](https://github.com/OliviaYJH)) |
 | :---: | :---: | :---: |
 | <img width="540" src="https://avatars.githubusercontent.com/u/52882799?v=4"/> | <img width="540" src="https://avatars.githubusercontent.com/u/137160756?v=4"/> | <img width="540" src="https://avatars.githubusercontent.com/u/81751105?v=4"/> |
+| view2, view3 | view1 | view4 |
 <br>
 
 ## GIT CONVENTION
