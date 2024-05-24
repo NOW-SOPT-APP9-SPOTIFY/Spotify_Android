@@ -10,7 +10,6 @@
         android:layout_width="77dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1"
-        android:src="@drawable/img_album"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,7 +14,7 @@ class OtherMusicViewHolder(
     fun onBind(mockOtherMusic: MockOtherMusic) {
         with(binding) {
             tvOtherArtist.text = mockOtherMusic.name
-            ivOtherArtist.load(R.drawable.img_other_music) {
+            ivOtherArtist.load(mockOtherMusic.imageUrl) {
                 transformations(CircleCropTransformation())
             }
         }

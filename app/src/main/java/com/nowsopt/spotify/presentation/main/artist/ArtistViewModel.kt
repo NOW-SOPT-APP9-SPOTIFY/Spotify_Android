@@ -2,6 +2,7 @@ package com.nowsopt.spotify.presentation.main.artist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nowsopt.spotify.R
 import com.nowsopt.spotify.data.ServicePool.artistService
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistDetailResponse
 import com.nowsopt.spotify.presentation.main.artist.model.ArtistModel
@@ -13,91 +14,86 @@ import kotlinx.coroutines.launch
 class ArtistViewModel : ViewModel() {
     val popularAlbumData = listOf(
         ArtistModel.MockPopularAlbumModel(
-            title = "title1",
+            id = 1,
+            title = "Unorthodox Jukebox",
             release = 2012
         ),
         ArtistModel.MockPopularAlbumModel(
-            title = "title2",
-            release = 2020
+            id = 4,
+            title = "24K Magic",
+            release = 2016
         ),
         ArtistModel.MockPopularAlbumModel(
-            title = "title3",
-            release = 2014
-        ),
-        ArtistModel.MockPopularAlbumModel(
-            title = "title4",
-            release = 2004
-        ),
-        ArtistModel.MockPopularAlbumModel(
-            title = "title5",
+            id = 2,
+            title = "Doo-Wops & Hooligans",
             release = 2010
+        ),
+        ArtistModel.MockPopularAlbumModel(
+            id = 6,
+            title = "An Evening With Silk Sonic",
+            release = 2021
         )
     )
     val genreData = listOf(
         ArtistModel.MockArtistGenreModel(
-            imageUrl = "imageUrl",
-            title = "title1",
-            description = "This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스트"
+            imageUrl = R.drawable.img_genre_1,
+            title = "This is Bruno Mars",
+            description = "This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스.."
         ),
         ArtistModel.MockArtistGenreModel(
-            imageUrl = "imageUrl",
-            title = "title2",
-            description = "This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스트"
+            imageUrl = R.drawable.img_genre_2,
+            title = "Bruno Mars 라디오",
+            description = "Maroon5, Jason Derulo, Ne-yo 외 다양한 아티스트와 함께"
         ),
         ArtistModel.MockArtistGenreModel(
-            imageUrl = "imageUrl",
-            title = "title3",
-            description = "This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스트"
-        ),
-        ArtistModel.MockArtistGenreModel(
-            imageUrl = "imageUrl",
-            title = "title4",
-            description = "This is Bruno Mars. 꼭 들어야 하는 트랙을 하나의 플레이리스트"
+            imageUrl = R.drawable.img_genre_3,
+            title = "Soft Pop Hits",
+            description = "Warm familiar pop you know and loce.Cover:Adele"
         )
     )
     val playlistData = listOf(
         ArtistModel.MockPlaylistModel(
-            imageUrl = "imageUrl",
-            title = "title1"
+            imageUrl = R.drawable.img_playlist_1,
+            title = "Bruno Mars - An Evening With Silk Sonic"
         ),
         ArtistModel.MockPlaylistModel(
-            imageUrl = "imageUrl",
-            title = "title2"
+            imageUrl = R.drawable.img_playlist_2,
+            title = "Bruno Mars - Official Discography"
         ),
         ArtistModel.MockPlaylistModel(
-            imageUrl = "imageUrl",
-            title = "title3"
+            imageUrl = R.drawable.img_playlist_3,
+            title = "Bruno Mars - Tour Setlist 2024"
         )
     )
     val otherMusicData = listOf(
         ArtistModel.MockOtherMusic(
-            imageUrl = "imageUrl",
-            name = "name1"
+            imageUrl = R.drawable.img_other_1,
+            name = "Maroon 5"
         ),
         ArtistModel.MockOtherMusic(
-            imageUrl = "imageUrl",
-            name = "name2"
+            imageUrl = R.drawable.img_other_2,
+            name = "Jason Derulo"
         ),
         ArtistModel.MockOtherMusic(
-            imageUrl = "imageUrl",
-            name = "name3"
+            imageUrl = R.drawable.img_other_3,
+            name = " Ne-Yo"
         )
     )
     val includedMusicData = listOf(
         ArtistModel.MockIncludedMusic(
-            imageUrl = "imageUrl",
-            title = "title1",
-            release = 2012
+            imageUrl = R.drawable.img_included_1,
+            title = "The Carter IV (Complete Edition)",
+            release = 2011
         ),
         ArtistModel.MockIncludedMusic(
-            imageUrl = "imageUrl",
-            title = "title2",
-            release = 2004
+            imageUrl = R.drawable.img_included_2,
+            title = "No.6 Collaborations Project",
+            release = 2019
         ),
         ArtistModel.MockIncludedMusic(
-            imageUrl = "imageUrl",
-            title = "title3",
-            release = 2024
+            imageUrl = R.drawable.img_included_3,
+            title = "Summer Party Anthems",
+            release = 2011
         )
     )
 
