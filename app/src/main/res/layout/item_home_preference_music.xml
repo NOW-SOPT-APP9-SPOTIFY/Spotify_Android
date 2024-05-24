@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="32dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_home_preference_music"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_home_preference_music"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="14dp"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bruno Mars - Grenade" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progress_bar_2"
+                app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progress_bar_3"
+                app:layout_constraintStart_toEndOf="@id/progress_bar_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progress_bar_4"
+                app:layout_constraintStart_toEndOf="@id/progress_bar_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/progress_bar_5"
+                app:layout_constraintStart_toEndOf="@id/progress_bar_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_progress_bar"
+                android:max="100"
+                android:progress="0"
+                app:layout_constraintEnd_toStartOf="@id/iv_home_preference_music_sound"
+                app:layout_constraintStart_toEndOf="@id/progress_bar_4"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@null"
+                android:padding="5dp"
+                android:src="@drawable/ic_sound_32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_album"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="67dp"
+                android:layout_marginTop="42dp"
+                android:contentDescription="@null"
+                android:src="@drawable/img_bruno"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progress_bar_1" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_music_album_mini"
+                android:layout_width="51dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="14dp"
+                android:contentDescription="@null"
+                android:src="@drawable/img_bruno"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_preference_music_album_mini"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_home_preference_music_title_mini" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_title_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="72dp"
+                android:theme="@style/TextAppearance.Spotify.Header.h1_kr_bold"
+                app:layout_constraintStart_toEndOf="@id/iv_home_preference_music_album_mini"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album"
+                tools:text="Doo-Wops &amp; Hooligans" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_album_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr2"
+                app:layout_constraintStart_toStartOf="@id/tv_home_preference_music_title_mini"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_preference_music_title_mini"
+                tools:text="앨범 · Bruno Mars" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@null"
+                android:padding="12dp"
+                android:src="@drawable/ic_plus_white_22"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album_mini" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_ellipsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_ellipsis_white_44"
+                app:layout_constraintStart_toEndOf="@id/iv_home_preference_plus"
+                app:layout_constraintTop_toBottomOf="@id/iv_home_preference_music_album_mini" />
+
+            <TextView
+                android:id="@+id/tv_home_preference_music_year_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_en"
+                app:layout_constraintBottom_toBottomOf="@id/iv_home_preference_play"
+                app:layout_constraintEnd_toStartOf="@id/iv_home_preference_play"
+                app:layout_constraintTop_toTopOf="@id/iv_home_preference_play"
+                android:text="2010 · 10곡" />
+
+            <ImageView
+                android:id="@+id/iv_home_preference_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="6dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_play_44"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

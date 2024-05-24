@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.main.artist.ArtistFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_bruno_mars"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_artist"
+                    android:theme="@style/TextAppearance.Spotify.Header.h1_en_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    app:layout_constraintStart_toStartOf="@id/iv_artist"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_artist"
+                    tools:text="Bruno Mars"
+                    android:textColor="@color/white"
+                    android:includeFontPadding="false"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_monthly_audience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/artist_monthly_audience"
+                    android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_artist" />
+
+                <TextView
+                    android:id="@+id/tv_monthly_audience_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:theme="@style/TextAppearance.Spotify.Body.Medium_kr"
+                    app:layout_constraintStart_toEndOf="@id/tv_monthly_audience"
+                    app:layout_constraintTop_toTopOf="@id/tv_monthly_audience"
+                    tools:text="1111.1만명" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_artist_small"
+                    android:layout_width="31dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray30"
+                    app:cardCornerRadius="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_monthly_audience">
+
+                    <ImageView
+                        android:id="@+id/iv_artist_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_bruno_mars_artist" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/btn_artist_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:background="@drawable/shape_rectangle_radius_15_gray30"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8.5dp"
+                    android:text="@string/artist_follow"
+                    android:theme="@style/TextAppearance.Spotify.Body.Regular.kr_semibold"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_artist_small"
+                    app:layout_constraintStart_toEndOf="@id/cv_artist_small"
+                    app:layout_constraintTop_toTopOf="@id/cv_artist_small" />
+
+                <ImageView
+                    android:id="@+id/btn_ellipsis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_ellipsis_gray_44"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_artist_small"
+                    app:layout_constraintStart_toEndOf="@id/btn_artist_follow"
+                    app:layout_constraintTop_toTopOf="@id/cv_artist_small" />
+
+                <ImageView
+                    android:id="@+id/btn_shuffle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_shuffle_44"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_artist_small"
+                    app:layout_constraintEnd_toStartOf="@id/btn_play"
+                    app:layout_constraintTop_toTopOf="@id/cv_artist_small" />
+
+                <ImageView
+                    android:id="@+id/btn_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_play_green"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_artist_small"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cv_artist_small" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:contentInsetStart="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16.5dp"
+                    android:text="@string/artist_music"
+                    android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:text="@string/artist_event"
+                    android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_music"
+                    app:layout_constraintStart_toEndOf="@id/tv_music"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_merch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:text="@string/artist_merch"
+                    android:theme="@style/TextAppearance.Spotify.Body.Regular_kr3"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_music"
+                    app:layout_constraintStart_toEndOf="@id/tv_event"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view_artist"
+                    android:layout_width="29dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tv_music"
+                    app:layout_constraintStart_toStartOf="@id/tv_music"
+                    app:layout_constraintTop_toBottomOf="@id/tv_music" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="@string/popular"
+                android:layout_marginStart="16dp"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_chart_topper_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_next_33"
+                app:layout_constraintBottom_toBottomOf="@id/tv_popular"
+                app:layout_constraintStart_toEndOf="@id/tv_popular"
+                app:layout_constraintTop_toTopOf="@id/tv_popular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_popular"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_popular_music" />
+
+            <TextView
+                android:id="@+id/tv_recommend_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:includeFontPadding="false"
+                android:layout_marginStart="16dp"
+                android:text="@string/recommend_artist"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_popular_music" />
+
+            <ImageView
+                android:id="@+id/iv_album"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_album_recommend"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recommend_artist" />
+
+            <ImageView
+                android:id="@+id/iv_shared_profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/img_shared_profile"
+                app:layout_constraintTop_toTopOf="@id/iv_album"
+                app:layout_constraintStart_toStartOf="@id/iv_album"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_shared_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                app:layout_constraintTop_toTopOf="@id/iv_shared_profile"
+                app:layout_constraintBottom_toBottomOf="@id/iv_shared_profile"
+                app:layout_constraintStart_toEndOf="@id/iv_shared_profile"
+                android:layout_marginStart="8dp"
+                android:text="@string/shared_profile"
+                />
+
+            <TextView
+                android:id="@+id/tv_shared_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                app:layout_constraintTop_toTopOf="@id/iv_shared_profile"
+                app:layout_constraintBottom_toBottomOf="@id/iv_shared_profile"
+                app:layout_constraintStart_toEndOf="@id/tv_shared_profile"
+                android:layout_marginStart="2dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_shared_album"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:src="@drawable/img_shared_album"
+                app:layout_constraintStart_toStartOf="@id/iv_album"
+                app:layout_constraintBottom_toBottomOf="@id/iv_album"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="14dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_shared_album_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Medium_en"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="@id/iv_shared_album"
+                app:layout_constraintStart_toEndOf="@id/iv_shared_album"
+                android:layout_marginTop="8.5dp"
+                android:layout_marginStart="13dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/tv_shared_playlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                android:textColor="@color/gray10"
+                app:layout_constraintTop_toBottomOf="@id/tv_shared_album_name"
+                app:layout_constraintStart_toStartOf="@id/tv_shared_album_name"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_next_33"
+                app:layout_constraintTop_toTopOf="@id/iv_shared_album"
+                app:layout_constraintBottom_toBottomOf="@id/iv_shared_album"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_album"
+                />
+
+            <TextView
+                android:id="@+id/tv_popular_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/music_popular"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_album" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_album"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_popular_music"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_popular_album" />
+
+            <TextView
+                android:id="@+id/btn_see_discography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_rectangle_radius_15_gray30"
+                android:paddingHorizontal="17dp"
+                android:paddingVertical="5.5dp"
+                android:text="@string/see_discography"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_popular_album" />
+
+            <TextView
+                android:id="@+id/tv_genre_title"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_see_discography"
+                tools:text="Bruno Mars 장르" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_artist_genre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_genre_title"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_artist_genre" />
+
+            <TextView
+                android:id="@+id/tv_detail_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/detail_description"
+                android:layout_marginStart="16dp"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_artist_genre" />
+
+            <ImageView
+                android:id="@+id/iv_artist_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_artist_detail"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_description" />
+
+            <ImageView
+                android:id="@+id/iv_bluecheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bluecheck"
+                app:layout_constraintTop_toTopOf="@id/iv_artist_info"
+                app:layout_constraintStart_toStartOf="@id/iv_artist_info"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_monthly_listener"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_artist_description"
+                app:layout_constraintBottom_toTopOf="@id/tv_artist_description"
+                android:layout_marginBottom="18dp"
+                />
+
+            <ImageView
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@drawable/img_15th"
+                app:layout_constraintTop_toTopOf="@id/iv_artist_info"
+                app:layout_constraintEnd_toEndOf="@id/iv_artist_info"
+                android:layout_marginTop="-22dp"
+                android:layout_marginEnd="-9dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_artist_description"
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_en2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:ellipsize="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/iv_artist_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="32.5dp"
+                android:layout_marginBottom="26.5dp"
+                android:layout_marginEnd="70.5dp"
+                android:includeFontPadding="false"
+                />
+
+            <ImageView
+                android:id="@+id/btn_artist_info_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_next_33"
+                app:layout_constraintEnd_toEndOf="@id/iv_artist_info"
+                app:layout_constraintBottom_toBottomOf="@id/iv_artist_info"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="36dp"
+                />
+
+            <TextView
+                android:theme="@style/TextAppearance.Spotify.Body.Regular_kr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/identified_artist"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="@id/iv_bluecheck"
+                app:layout_constraintBottom_toBottomOf="@id/iv_bluecheck"
+                app:layout_constraintStart_toEndOf="@id/iv_bluecheck"
+                android:layout_marginStart="8dp"
+                android:includeFontPadding="false"/>
+
+            <TextView
+                android:id="@+id/tv_artist_playlist"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                app:layout_constraintTop_toBottomOf="@id/iv_artist_info"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/artist_playlist"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_artist_playlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_artist_playlist"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_artist_playlist"
+                />
+
+            <TextView
+                android:id="@+id/tv_other_music"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_music_fan_like"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_artist_playlist"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_other_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_other_music"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_other_music"
+                />
+
+            <TextView
+                android:id="@+id/tv_included_music"
+                android:theme="@style/TextAppearance.Spotify.Header.h2_en_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/included_music"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_other_music"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_included_music"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_included_music"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_included_music"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="8dp"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_included_music"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

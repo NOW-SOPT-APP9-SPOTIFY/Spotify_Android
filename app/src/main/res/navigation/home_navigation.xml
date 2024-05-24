@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homePreferenceFragment">
+    <fragment
+        android:id="@+id/homePreferenceFragment"
+        android:name="com.nowsopt.spotify.presentation.main.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_navigation_to_artist_fragment"
+            app:destination="@id/artist_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artist_fragment"
+        android:name="com.nowsopt.spotify.presentation.main.artist.ArtistFragment"
+        android:label="fragment_artist"
+        tools:layout="@layout/fragment_artist">
+        <action
+            android:id="@+id/action_artist_fragment_to_chartTopperFragment"
+            app:destination="@id/chartTopperFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chartTopperFragment"
+        android:name="com.nowsopt.spotify.presentation.main.artist.chart.ChartTopperFragment"
+        android:label="fragment_chart_topper"
+        tools:layout="@layout/fragment_chart_topper"/>
+</navigation>

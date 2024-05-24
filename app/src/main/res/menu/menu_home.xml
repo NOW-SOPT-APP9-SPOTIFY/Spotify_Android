@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Home -->
+    <item
+        android:id="@+id/home_navigation"
+        android:icon="@drawable/ic_home_gray_24"
+        android:title="홈" />
+
+    <!-- Search -->
+    <item
+        android:id="@+id/search_navigation"
+        android:enabled="true"
+        android:icon="@drawable/ic_search_gray_24"
+        android:title="검색하기" />
+
+    <!-- Library -->
+    <item
+        android:id="@+id/library_navigation"
+        android:icon="@drawable/ic_library_gray_24"
+        android:title="내 라이브러리" />
+
+    <!-- Premium -->
+    <item
+        android:id="@+id/premium_navigation"
+        android:icon="@drawable/ic_spotify_gray_24"
+        android:title="프리미엄" />
+</menu>

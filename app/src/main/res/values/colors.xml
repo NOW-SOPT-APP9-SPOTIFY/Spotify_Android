@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    chromatic color-->
+    <color name="green">#1ED760</color>
+    <color name="lime">#CAF27A</color>
+    <color name="purple">#B49BC8</color>
+    <color name="pink">#F673A2</color>
+    <color name="blue10">#519BF4</color>
+    <color name="blue20">#1E69C3</color>
+    <color name="red">#C50000</color>
+
+    <!--    achromatic color-->
+    <color name="white">#FFFFFF</color>
+    <color name="gray10">#B3B3B3</color>
+    <color name="gray20">#ADADAD</color>
+    <color name="gray30">#A7A7A7</color>
+    <color name="gray40">#292929</color>
+    <color name="bg">#121212</color>
+    <color name="black">#181414</color>
+
+    <!--    gradation color-->
+    <color name="gradi_m1_start">#55FFB906</color>
+    <color name="gradi_m1_center">#24A1A09E</color>
+    <color name="gradi_m1_end">#246D6D6D</color>
+
+    <color name="gradi_m2_start">#4DFFDFA1</color>
+    <color name="gradi_m2_center">#1FC6B79B</color>
+    <color name="gradi_m2_end">#1F959595</color>
+
+    <color name="gradi_m3_start">#A90B0B</color>
+    <color name="gradi_m3_center">#5B1A1A</color>
+    <color name="gradi_m3_end">#232323</color>
+
+    <color name="gradi_m4_start">#636363</color>
+    <color name="gradi_m4_center">#4F4F4F</color>
+    <color name="gradi_m4_end">#333333</color>
+
+    <color name="gradi_m5_start">#8A2A2A</color>
+    <color name="gradi_m5_center">#483333</color>
+    <color name="gradi_m5_end">#353535</color>
+
+    <color name="gradi_m6_start">#6E3D11</color>
+    <color name="gradi_m6_center">#573313</color>
+    <color name="gradi_m6_end">#232323</color>
+
+    <color name="gradi_m7_start">#312019</color>
+    <color name="gradi_m7_end">#121212</color>
+</resources>
