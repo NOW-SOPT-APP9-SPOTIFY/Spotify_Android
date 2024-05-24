@@ -6,7 +6,7 @@ import com.nowsopt.spotify.R
 import com.nowsopt.spotify.data.ServicePool
 import com.nowsopt.spotify.data.model.response.HitSongs
 import com.nowsopt.spotify.data.model.response.Playlists
-import com.nowsopt.spotify.data.model.response.PopularArtists
+import com.nowsopt.spotify.data.model.response.PopularArtist
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,8 +20,8 @@ class HomeMainViewModel : ViewModel() {
     private val _hitSong = MutableStateFlow<List<HitSongs.HitSong>>(emptyList())
     val hitSong: StateFlow<List<HitSongs.HitSong>> get() = _hitSong
 
-    private val _popularArtists = MutableStateFlow<List<PopularArtists.PopularArtist>>(emptyList())
-    val popularArtist: StateFlow<List<PopularArtists.PopularArtist>> get() = _popularArtists
+    private val _popularArtists = MutableStateFlow<List<PopularArtist>>(emptyList())
+    val popularArtist: StateFlow<List<PopularArtist>> get() = _popularArtists
 
     fun getPlaylists() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -38,7 +38,7 @@ class HomeMainViewModel : ViewModel() {
     fun getHitSongs() {
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
-                ServicePool.homeMainService.getTodayHitSong()
+                ServicePool.homeMainService.getTodayHitSongs()
             }.onSuccess { hitSongs ->
                 _hitSong.value = hitSongs.data.hitSongs
             }.onFailure {
@@ -52,7 +52,7 @@ class HomeMainViewModel : ViewModel() {
             runCatching {
                 ServicePool.homeMainService.getPopularArtists()
             }.onSuccess { popularArtists ->
-                _popularArtists.value = popularArtists.data.popularArtists
+                _popularArtists.value += popularArtists.data
             }.onFailure {
                 it.printStackTrace()
             }
