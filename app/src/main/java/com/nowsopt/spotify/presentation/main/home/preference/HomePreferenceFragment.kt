@@ -1,5 +1,7 @@
 package com.nowsopt.spotify.presentation.main.home.preference
 
+import android.graphics.RenderEffect
+import android.graphics.Shader
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
@@ -11,7 +13,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.nowsopt.spotify.R
@@ -42,9 +43,13 @@ class HomePreferenceFragment : BindingFragment<FragmentHomePreferenceBinding>() 
 
     private fun initBinds() {
         homePreferenceMusicAdapter =
-            HomePreferenceMusicAdapter(requireContext()) { mockMusicModel ->
-                // 클릭시 화면 이동 로직 구현 -> 블러 화면
-                findNavController().navigate(R.id.action_home_navigation_to_musicDetailFragment)
+            HomePreferenceMusicAdapter(requireContext()) { album ->
+                val dialogFragment = FullScreenDialogFragment.newInstance(
+                    album.id,
+                    album.artist.artistName,
+                    album.albumName
+                )
+                dialogFragment.show(parentFragmentManager, "FullScreenDialog")
             }
 
         with(binding) {
