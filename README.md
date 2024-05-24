@@ -1,5 +1,5 @@
 # 🎶 Spotify_Android
-> NOW SOPT 34th 합동 세미나 앱 4조 Android팀 <br>
+> NOW SOPT 34th 합동 세미나 앱 9조 Android팀 <br>
 24.05.11 - 24.05.24
 <br>
 
